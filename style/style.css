@@ -1,0 +1,384 @@
+:root {
+    --yellow-color: #FFC857;
+    --dark-yellow-color: #ffbb33;
+    --red-color: #c5283d;
+    --white-color: #ffffff;
+    --light-white-color: #f3f3f3;
+    --blue-color: rgb(11, 78, 179);
+    --body-color: linear-gradient(219.58deg, #010417 10.26%, #2B333F 84.25%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+
+}
+
+
+* {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Global Stylings */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+input,
+select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+button {
+    text-align: center;
+    margin-top: 1.5em;
+    border-radius: 10px;
+    border: 0;
+    padding: 0.75rem;
+    text-decoration: none;
+    background-color: var(--yellow-color);
+    color: #000000;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--dark-yellow-color);
+}
+
+nav {
+    background-color: rgba(237, 235, 235, 0.25);
+    height: 140.69px;
+    display: flex;
+    align-items: center;
+}
+
+nav a,
+.homePage a {
+    display: inline;
+    text-decoration: none;
+    font-size: 1.9rem;
+    color: var(--yellow);
+    padding: 10px;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+
+/* --------------------------------- logIn ---------------------------------*/
+.centerBody {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    background: linear-gradient(219.58deg, #010417 10.26%, #2B333F 84.25%);
+}
+
+.log-in-text {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.log-in-button {
+    width: 100%;
+}
+
+.forgot-password-text {
+    margin-top: 1em;
+    text-align: end;
+    font-size: 12px;
+}
+
+.forgot-password-text:hover {
+    text-decoration: underline;
+}
+
+.formDivider {
+    text-align: center;
+}
+
+.formDividerText {
+    position: relative;
+    margin-top: 1em;
+    text-align: center;
+
+}
+
+.formDividerText::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 45%;
+    top: 50%;
+    left: 0;
+    background: var(--light-white-color);
+}
+
+
+.formDividerText::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 45%;
+    top: 50%;
+    right: 0;
+    background: var(--light-white-color);
+}
+
+.need-account {
+    font-size: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sign-up-text {
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.signUp {
+    color: black;
+}
+
+.signUp:hover {
+    color: var(--red-color);
+}
+
+
+/* --------------------------------- register page --------------------------------- */
+.Register-text {
+    font-weight: 700;
+    text-align: center;
+}
+
+
+.form {
+    background-color: var(--light-white-color);
+}
+
+.width-50 {
+    width: 50%;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Progressbar */
+.progressbar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    counter-reset: step;
+    margin: 2rem 0 4rem;
+}
+
+.progressbar::before,
+.progress {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    background-color: #000000;
+    z-index: -1;
+}
+
+.progress {
+    background-color: var(--blue-color);
+    width: 50%;
+    transition: 0.3s;
+}
+
+.progress-step {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.progress-step::before {
+    counter-increment: step;
+    content: counter(step);
+}
+
+.progress-step::after {
+    content: attr(data-title);
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.progress-step-active {
+    background-color: var(--blue-color);
+    color: #f3f3f3;
+}
+
+/* Form */
+.form {
+    width: 450px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 0.35rem;
+    padding: 1.5rem;
+}
+
+.form-step {
+    display: none;
+    transform-origin: top;
+    animation: animate 0.5s;
+}
+
+.form-step-active {
+    display: block;
+}
+
+.input-group {
+    margin: 2rem 0;
+}
+
+@keyframes animate {
+    from {
+        transform: scale(1, 0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+.btns-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.btn {
+    padding: 0.75rem;
+    display: block;
+    text-decoration: none;
+    background-color: var(--blue-color);
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: 0.25rem;
+    height: 50px;
+}
+
+.btn:hover {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--blue-color);
+}
+
+.recipient-name {
+    display: flex;
+    gap: 8px;
+}
+
+.recipient-name>input {
+    width: 50%;
+}
+
+.data-cvv {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.price-container h2 {
+    text-align: center;
+}
+
+@media only screen and (min-width:481px) and (max-width:768px) {
+    .form {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width:480px) {
+    .form {
+        width: 300px;
+    }
+}
+
+
+
+/* --------------------------------- index ---------------------------------*/
+.indexBody {
+    background-color: var(--body-color);
+    background-image: url(/img/homeBackground.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.websiteName {
+    margin-right: auto;
+    color: var(--white-color);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-left: 1.5em;
+}
+
+.signUpButton {
+    margin-right: 3em;
+}
+
+.logInButton,
+.signUpButton {
+    padding: 5px 25px;
+    border: 0;
+    font-weight: 600;
+    margin-left: 2em;
+    filter: drop-shadow(0px 5.06977px 5.06977px rgba(0, 0, 0, 0.5));
+}
+
+.motivation {
+    font-size: 4rem;
+    color: var(--white-color);
+    margin-top: 3em;
+    margin-bottom: 1em;
+}
+
+.workoutsButton {
+    width: 300px;
+    margin: 1em;
+}
+
+.homePage>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

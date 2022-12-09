@@ -1,107 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/register.css">
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-    <script src="../js/register.js" defer></script>
-    <title>Register</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../style/style.css">
+  <script src="../js/register.js" defer></script>
+  <title>Register</title>
 </head>
-<body>
-    <form action="/" class="form" method="post">
-        <h1 class="text-center">Register Form</h1>
-        <!-- Progress bar -->
-        <div class="progressbar">
-          <div class="progress" id="progress"></div>
-          
-          <div class="progress-step progress-step-active" data-title="SignUp"></div>
 
-          <div class="progress-step" data-title="measurements"></div>
+<body class="centerBody">
+  <form action="/" class="form" method="post">
+    <h2 class="Register-text">Register Form</h2>
+    <!-- Progress bar -->
+    <div class="progressbar">
+      <div class="progress" id="progress"></div>
 
-        </div>
-  
-        <!-- Steps -->
-        <div class="form-step form-step-active">
-          <div class="input-group">
+      <div class="progress-step progress-step-active" data-title="SignUp"></div>
 
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" class="email" placeholder="" required>
+      <div class="progress-step" data-title="measurements"></div>
 
-            <br>
+    </div>
 
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="username" placeholder="" required>
+    <!-- Steps -->
+    <div class="form-step form-step-active">
+      <div class="input-group">
 
-            <br>
-
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" class="password" placeholder="" required>
-            
-          </div>
-          
-
-          <div class="">
-            <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
-          </div>
-        </div>
-        
-        <div class="form-step">
-          <div>
-            <!-- this needs to be updated to better selector -->
-            <label for="weight">weight (kg)</label>
-            <input type="number" name="weight" id="weight" required>
-        </div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="email" placeholder="" required>
 
         <br>
 
-        <div>
-            <label for="Goal">target weight (kg)</label>
-            <input type="number" name="Goal" id="Goal" required>
-        </div>
-
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username" class="username" placeholder="" required>
 
         <br>
 
-        <div>
-            <label for="height">height (cm)</label>
-            <input type="number" name="height" id="height" required>
-        </div>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="password" placeholder="" required>
 
-        <br>
+      </div>
 
-        <div>
-            <label for="gender">gender</label>
-            <select id="gender" name="gender" class="gender" required>
-                <option value="">Select gender</option>
-                <option value="1">Male</option>
-                <option value="0">Female</option>
-            </select>
-        </div>
 
-        <br>
+      <div class="">
 
-        <div>
-            <label for="gender">Fitness Level</label>
-            <select id="level" name="level" class="level" required>
-                <option value="">Select Fitness Level</option>
-                <option value="beginner">Beginner</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="advanced">Advanced</option>
-                <option value="old">Old people</option>
-            </select>
-        </div>
+        <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+      </div>
+    </div>
 
-        <br>
+    <div class="form-step">
+      <div>
+        <!-- this needs to be updated to better selector -->
+        <label for="weight">weight (kg)</label>
+        <input type="number" name="weight" id="weight" required>
+      </div>
 
-        <div class="btns-group">
-            <a href="#" class="btn btn-prev">Previous</a>
-            <input type="submit" value="Submit" class="btn" />
-        </div>
+      <br>
 
-      </form>
-    
-      
+      <div>
+        <label for="Goal">target weight (kg)</label>
+        <input type="number" name="Goal" id="Goal" required>
+      </div>
+
+
+      <br>
+
+      <div>
+        <label for="height">height (cm)</label>
+        <input type="number" name="height" id="height" required>
+      </div>
+
+      <br>
+
+      <div>
+        <label for="gender">gender</label>
+        <select id="gender" name="gender" class="gender" required>
+          <option value="">Select gender</option>
+          <option value="1">Male</option>
+          <option value="0">Female</option>
+        </select>
+      </div>
+
+      <br>
+
+      <div>
+        <label for="gender">Fitness Level</label>
+        <select id="level" name="level" class="level" required>
+          <option value="">Select Fitness Level</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+          <option value="old">Old people</option>
+        </select>
+      </div>
+
+      <br>
+
+      <div class="btns-group">
+        <a href="#" class="btn btn-prev">Previous</a>
+        <input type="button" value="Submit" class="btn" />
+      </div>
+
+  </form>
+
+
 </body>
+
 </html>
