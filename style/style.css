@@ -393,13 +393,16 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 40%;
+    margin: auto;
 }
 
 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 2.2rem;
+    justify-items: center;
 }
 
 
@@ -409,11 +412,12 @@ h2 {
     align-items: center;
     grid-column: span 3;
     border-radius: 16px;
+    width: 100%;
     background: linear-gradient(85deg, #434343, #262626);
 }
 
 .readyPlansText {
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--white-color);
     margin: 0.5em;
 }
@@ -424,13 +428,12 @@ h2 {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    width: 389px;
-    height: 378px;
+    width: 100%;
+    aspect-ratio: 1/1;
     background: linear-gradient(85deg, #434343, #262626);
     border-radius: 16px;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     transition: 0.5s;
-
 }
 
 .plan:hover {
@@ -441,8 +444,11 @@ h2 {
 }
 
 .planImg {
-    width: 181.72px;
-    height: 169.11px;
+    /* width: 181.72px;
+    height: 169.11px; */
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     margin-bottom: 1em;
 }
 
@@ -462,13 +468,31 @@ h2 {
     }
 
     /* --------------------------------- plans ---------------------------------*/
-    .grid {
+    .grid{
+        place-self: center;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2.5rem;
+        grid-template-columns: 1fr 1fr;
+        padding: 1em;
+        grid-row-gap: 80px;
     }
 
+    .plan{
+        width: 100%;
+        margin: auto;
+    }
 
+    
+    .planName {
+        font-size: 30px;
+    }
+
+    .textDiv {
+        grid-column: span 2;
+    }
+
+    .readyPlansText{
+        font-size: 2rem;
+    }
 
 }
 
@@ -478,10 +502,45 @@ h2 {
     }
 
     /* --------------------------------- plans ---------------------------------*/
-    .grid {
+
+
+    .grid{
+        place-self: center;
         display: grid;
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        padding: 1em;
+        grid-row-gap: 80px;
     }
 
+    .plan{
+        width: 80%;
+        margin: auto;
+    }
+
+    
+    .planName {
+        font-size: 30px;
+    }
+
+    .textDiv {
+        grid-column: span 1;
+    }
+
+    .readyPlansText{
+        font-size: 2rem;
+    }
+
+}
+
+.addPlan{
+   display: flex;
+   justify-content: center;
+}
+
+.addPlan > button{
+    margin-top: 3em;
+    height: 100px;
+    width: 100px;
+    border-radius: 70%;
+    font-size: 2rem;
 }
