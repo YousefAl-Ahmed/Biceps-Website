@@ -459,7 +459,75 @@ h2 {
     color: var(--dark-yellow-color);
 }
 
+/* -------------------------body parts ------------------------------- */
+.plans-title {
+    color: white;
+}
 
+.main-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 0 3rem 0 3rem;
+}
+
+.cards-container {
+    width: 90%;
+    margin: auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+
+
+
+.card {
+    /* border: #c5283d 1px solid; */
+    border-radius: 50px;
+
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0);
+
+}
+
+.card-img {
+    width: 105%;
+    height: 100%;
+    margin-bottom: -20px;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:hover .card-img {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.card-title {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+    font-size: 2rem;
+    color: var(--white-color);
+    margin: 1em;
+}
 
 @media only screen and (min-width:481px) and (max-width:768px) {
 
