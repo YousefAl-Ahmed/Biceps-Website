@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/style/style.css">
+    <title>Document</title>
+</head>
+<body class="profileBody">
+
+    <nav>
+        <h2 class="websiteName">Biceps</h2>
+        <li><a href="">Home</a></li>
+        <li><a href="">My plans</a></li>
+        <li><a href="">Workouts</a></li>
+    
+        <label class="dropdown">
+    
+            <div class="dd-button"> My Account</div>
+    
+            <input type="checkbox" class="dd-input" id="test">
+    
+            <ul class="dd-menu">
+                <li><a href="">My Profile</a></li>
+                <li><a href="">Log out</a></li>
+            </ul>
+    
+        </label>   
+    </nav>>
+
+
+    <div class="GeneralProfileContainer Container">
+        <h1 class="profileInfo">General Info</h1>
+
+        <div class="GeneralProfile">
+            <div class="GeneralProfile">
+                <label class="GeneralProfileText" for="name">Name</label>
+                <input type="text" name="name">
+            </div>
+    
+            <div class="GeneralProfile">
+                <label class="GeneralProfileText" for="weight">weight (kg)</label>
+                <input type="number" name="weight">
+            </div>
+    
+            <div class="GeneralProfile">
+                <label class="GeneralProfileText" for="target weight">target weight (kg)</label>
+                <input type="number" name="target weight" placeholder="">
+            </div>
+    
+            <div class="GeneralProfile">
+                <label class="GeneralProfileText" for="height" placeholder="">height</label>
+                <input type="number" name="height" placeholder="">
+            </div>
+    
+            <div class="GeneralProfile">
+                <label class="GeneralProfileText" for="Age">Age</label>
+                <input type="number" name="Age" placeholder="" disabled>
+            </div>
+            <div class="GeneralProfile">
+                <label class="GeneralProfileText" for="gender">Fitness Level</label>
+                <select name="level" class="level">
+                    <option value="">Select Fitness Level</option>
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>
+                    <option value="old">Old people</option>
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <button class="updateButton">Update Info</button>
+        </div>
+    </div>
+
+
+    <div class="NutritionContainer Container">
+        <h1 class="profileInfo">Nutritions</h1>
+        
+
+        <div class="GeneralProfile nutrition">
+            <div class="GeneralProfile">
+                <label class="NutritionText" for="BMI">BMI</label>
+                <input type="number" name="BMI" placeholder="" disabled>
+            </div>
+    
+            <div class="GeneralProfile nutrition">
+                <label class="NutritionText" for="Calories">Calories/Day</label>
+                <input type="number" name="Calories" placeholder="" disabled>
+            </div>
+    
+            <div class="GeneralProfile nutrition">
+                <label class="NutritionText" for="Protien">Protien/Day</label>
+                <input type="number" name="Protien" placeholder="" disabled>
+            </div>
+    
+            <div class="GeneralProfile nutrition">
+                <label class="NutritionText" for="Ideal_Weight"> Ideal Weight</label>
+                <input type="number" name="Ideal_Weight" placeholder="" disabled>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

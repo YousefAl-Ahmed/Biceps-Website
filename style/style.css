@@ -68,15 +68,27 @@ nav {
     height: 12vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
 }
+
 
 nav a,
 .homePage a {
     display: inline;
     text-decoration: none;
     font-size: 1.9rem;
-    color: var(--yellow);
+    color: var(--yellow-color);
     padding: 10px;
+}
+
+nav li {
+    list-style: none;
+    padding: 3em;
+}
+
+ul {
+    list-style: none
 }
 
 h2 {
@@ -393,13 +405,16 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 50%;
+    margin: auto;
 }
 
 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: 2.2rem;
+    justify-items: center;
 }
 
 
@@ -409,11 +424,12 @@ h2 {
     align-items: center;
     grid-column: span 3;
     border-radius: 16px;
+    width: 100%;
     background: linear-gradient(85deg, #434343, #262626);
 }
 
 .readyPlansText {
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--white-color);
     margin: 0.5em;
 }
@@ -424,13 +440,12 @@ h2 {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    width: 389px;
-    height: 378px;
+    width: 100%;
+    aspect-ratio: 1/1;
     background: linear-gradient(85deg, #434343, #262626);
     border-radius: 16px;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     transition: 0.5s;
-
 }
 
 .plan:hover {
@@ -441,14 +456,17 @@ h2 {
 }
 
 .planImg {
-    width: 181.72px;
-    height: 169.11px;
+    width: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     margin-bottom: 1em;
+    margin-top: 1em;
 }
 
 .planName {
     font-weight: 600;
-    font-size: 48px;
+    font-size: 40px;
+    padding: 0 1em;
     line-height: 58px;
     color: var(--dark-yellow-color);
 }
@@ -524,6 +542,221 @@ h2 {
 }
 
 
+.start {
+    margin-bottom: 20px;
+}
+
+.addPlan {
+    display: flex;
+    justify-content: center;
+}
+
+.addPlan>button {
+    margin-top: 3em;
+    height: 100px;
+    width: 100px;
+    border-radius: 70%;
+    font-size: 2rem;
+}
+
+
+/* ---------------------- nav-Dropdown ----------------------*/
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+    margin-right: 2em;
+}
+
+.dd-button {
+    display: inline-block;
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 10px 30px 10px 20px;
+    background-color: var(--yellow-color);
+    cursor: pointer;
+    white-space: nowrap;
+    border-radius: 20px;
+    transition: 0.3s;
+
+}
+
+.dd-button:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+}
+
+.dd-button:hover {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--dark-yellow-color);
+}
+
+.dd-input {
+    display: none;
+}
+
+.dd-menu {
+    position: absolute;
+    top: 100%;
+    border-radius: 10px;
+    padding: 0;
+    margin: 2px 0 0 0;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+    background-color: #0b0000;
+    list-style-type: none;
+}
+
+.dd-input+.dd-menu {
+    display: none;
+}
+
+.dd-input:checked+.dd-menu {
+    display: block;
+}
+
+.dd-menu li {
+    padding: 10px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.dd-menu li:hover {
+    background-color: #f6f6f6;
+}
+
+.dd-menu li a {
+    display: block;
+    margin: -10px -20px;
+    padding: 10px 20px;
+}
+
+.dd-menu li.divider {
+    padding: 0;
+    border-bottom: 1px solid #cccccc;
+}
+
+/* --------------------------------- Profile ---------------------------------*/
+.profileBody{
+    background-color: var(--blue-color);
+    height: 100vh;
+}
+
+
+.profileInfo{
+    padding: 36px;
+
+}
+
+.Container{
+    width: 60%;
+    background-color: var(--light-white-color);
+    margin: auto;
+    margin-bottom: 5em;
+    border-radius: 10px;
+}
+
+
+.GeneralProfile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.GeneralProfile div{
+    display: block;
+}
+
+.updateButton{
+    padding: 20px;
+    margin-left: 2em;
+    margin-bottom: 1em;
+    font-size: 1.1rem;
+}
+
+.NutritionContainer{
+    padding-bottom: 90px;
+}
+
+
+/* -------------------------body parts ------------------------------- */ 
+
+.plans-title {
+    color: white;
+}
+
+.main-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 0 3rem 0 3rem;
+}
+
+
+.cards-container {
+    width: 90%;
+    margin: auto 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+
+
+
+.card {
+    /* border: #c5283d 1px solid; */
+    border-radius: 50px;
+
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0);
+
+}
+
+.card-img {
+    width: 105%;
+    height: 100%;
+    margin-bottom: -20px;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:hover .card-img {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.card-title {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+    font-size: 2rem;
+    color: var(--white-color);
+    margin: 1em;
+}
 
 @media only screen and (min-width:481px) and (max-width:768px) {
 
@@ -532,13 +765,36 @@ h2 {
     }
 
     /* --------------------------------- plans ---------------------------------*/
+
+    .gridContanior {
+        width: 100%;
+    }
+
     .grid {
+        place-self: center;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2.5rem;
+        grid-template-columns: 1fr 1fr;
+        padding: 1em;
+        grid-row-gap: 80px;
+    }
+
+    .plan {
+        width: 100%;
+        margin: auto;
     }
 
 
+    .planName {
+        font-size: 30px;
+    }
+
+    .textDiv {
+        grid-column: span 2;
+    }
+
+    .readyPlansText {
+        font-size: 2rem;
+    }
 
 }
 
@@ -548,11 +804,42 @@ h2 {
     }
 
     /* --------------------------------- plans ---------------------------------*/
+
+    .gridContanior {
+        width: 90%;
+    }
+
     .grid {
+        place-self: center;
         display: grid;
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        padding: 1em;
+        grid-row-gap: 80px;
+    }
+
+ myPlans-chooseDay
+}
+
+
+    .plan {
+        width: 100%;
+        margin: auto;
+    }
+
+
+    .planName {
+        font-size: 40px;
+    }
+
+    .textDiv {
+        grid-column: span 1;
+    }
+
+    .readyPlansText {
+        font-size: 2rem;
     }
 
 }
+
+
 
