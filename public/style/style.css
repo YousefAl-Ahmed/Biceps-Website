@@ -543,6 +543,10 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* expand div */
+    grid-column: span 3;
+    
+
 }
 
 .chooseDayPlanName {

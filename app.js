@@ -39,6 +39,8 @@ app.get("/register", async (req, res) => {
 });
 
 
+
+
 app.post("/", async (req, res) => {
     console.log(req.body);
     const email = req.body.email;
@@ -58,6 +60,11 @@ app.get("/logIn", async (req, res) => {
     res.render("logIn");
 });
 
+app.get("/plans", async (req, res) => {
+    res.render("plans");
+});
+
+
 //workouts route
 app.get("/body-parts", async (req, res) => {
     res.render("body-parts");
@@ -66,6 +73,15 @@ app.get("/body-parts", async (req, res) => {
 app.get("/body-parts/:muscle", async (req, res) => {
     const muscle = req.params.muscle;
     res.render("workouts", {workouts: plans.showExercises(muscle)});
+});
+app.get("/plans-chooseDay" , async (req, res) => {
+    res.render("plans-chooseDay");
+});
+
+
+app.get( "/addExcercise/:day", async (req, res) => {
+    const day = req.params.day;
+    res.render('addExcercise', {day: day});
 });
 
 

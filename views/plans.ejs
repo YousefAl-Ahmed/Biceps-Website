@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/popUp.css">
+
+    <script defer src="/js/getplan.js"></script>
+
     <title>Plans</title>
 </head>
 
@@ -109,8 +113,26 @@
     </div>
 
     <div class="addPlan">
-        <button>+</button>
+        <button data-modal-target = '#modal'>+</button>
     </div>
+
+    <div class="modal" id="modal">
+        <div class = 'modal-header'>
+            <div class = 'title'>Choose a name for your plan</div>
+            <button data-close-button=" close-button"  class = 'close-button'>&times;</button>
+        </div>
+        <div class="modal-body">
+
+            <form action="/plans-chooseDay" method="POST">
+                 <input name="planNameValue"   placeholder="Example: Yousef Plan :D" type="text" id="planInput">
+                 <button  onclick="getPlanNameValue()" id="submit">save</button> </a>
+
+
+
+        </div>
+    </div>
+    <div  id="overlay"></div>
+
 
 
 </body>
