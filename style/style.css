@@ -502,13 +502,13 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-column: span 3;
 }
 
 .chooseDayPlanName {
     font-size: 4rem;
-    color: var(--white-color);
+    color: white;
     margin: 0.5em;
+    background: transparent;
 }
 
 .dayCard {

@@ -35,4 +35,21 @@ function closeModal(modal) {
     modal.classList.remove('active')
     overlay.classList.remove('active')
   }
-  
+//   popUp functionality ends here
+
+document.getElementById('submit').onclick = function() {
+    var selected = [];
+    for (var option of document.getElementById('Exercises').options)
+    {
+        if (option.selected) {
+            selected.push(option.value);
+        }
+    }
+    console.log(selected);
+    alert(selected);
+}
+// Choose exercises functionality starts here
+
+
+
+

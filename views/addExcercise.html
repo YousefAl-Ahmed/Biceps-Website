@@ -9,6 +9,8 @@
     <script defer src="/js/popUp.js"></script>
 
 
+
+
     <title>Add Exercise</title>
 </head>
 <body class="chooseDayBody">
@@ -28,7 +30,7 @@
         <div class="grid"> 
 
             <div class="planNameDiv">
-                <h1 class="chooseDayPlanName" contenteditable="true">Plan name</h1>
+                <p id="displayPlanName" class="chooseDayPlanName">Sunday</p>
             </div>
             <div data-modal-target = '#modal' class="dayCard">
                 <p class="dayText">Add</p>
@@ -43,26 +45,42 @@
     <!-- popup to add exercise-->
     <div class="modal" id="modal">
         <div class = 'modal-header'>
-            <div class = 'modal-title'>Add Exercises</div>
+            <div class = 'title'>Add Exercises</div>
             <button data-close-button=" close-button"  class = 'close-button'>&times;</button>
         </div>
         <div class="modal-body">
-            Exercises will be shown here
-            Exercises will be shown here
-            Exercises will be shown here
-            Exercises will be shown here
-            Exercises will be shown here
-            Exercises will be shown here
-            Exercises will be shown here
-            Exercises will be shown here
-            Exercises will be shown here            Exercises will be shown here
 
+            <form action="#">
+                <label for="Exercises">Choose Excercises</label>
+                <select name="Exercises" id="Exercises" size="10" multiple>
+                <optgroup label="Chest">
+
+                  <option value="chest1">Chest1</option>
+                  <option value="chest2">Chest2</option>
+                  <option value="chest3">Chest3</option>
+                  <option value="chest4">Chest4</option>
+                  <option value="chest5">Chest5</option>
+
+                  <optgroup label="Biceps">
+
+                  <option value="biceps1">biceps1</option>
+                  <option value="biceps2">biceps2</option>
+                  <option value="biceps3">biceps3</option>
+                </select>
+                
+                <button id="submit">Add Exercises</button>
+
+                <!-- <input type="submit" value="Submit" onclick="getOption()" /> -->
+
+            </form>
+         
 
         </div>
     </div>
-    
-     
+
 <div  id="overlay"></div>
+<script src="/js/frontEnd.js"></script>
+
     
 </body>
 </html>
