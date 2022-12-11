@@ -5,7 +5,7 @@ const sqlite = require('sqlite')
 
 const getDbConnection = async () => {
     return await sqlite.open({
-        filename: 'albayat.db3',
+        filename: 'albayat.db',
         driver: sqlite3.Database
     })
 }
@@ -16,7 +16,7 @@ const getDbConnection = async () => {
 const addUser = async (email, username, password, weight, targetWeight, height, gender, level, birthDate) =>{
     const db = await getDbConnection();
     const sql = `INSERT INTO users 
-    ('email', 'userName', 'password', 'weight', 'targetWeight', 'height', 'gender', 'level', 'birthDate') 
+    ('email', 'username', 'password', 'weight', 'target_weight', 'height', 'gender', 'level', 'birth_date') 
     VALUES (${email}, '${username}', '${password}', ${weight}, ${targetWeight}, ${height}, '${gender}', '${level}', '${birthDate}')`;
 
     await db.run(sql);
@@ -29,8 +29,8 @@ const addUser = async (email, username, password, weight, targetWeight, height, 
 //compare hashed passwords
 const authUser = async (email, username, password) =>{
     const db = await getDbConnection();
-    const sql = `SELECT email, userName, password FROM users WHERE (email = '${email}' AND password = '${password}') OR (username = '${username}' AND password = '${password}')`;
-    const user = await db.run(sql);
+    const sql = `SELECT email, username FROM users WHERE (email = '${email}') OR (username = '${username}')`;
+    const user = await db.get(sql);
     await db.close();   
     return user;  //if the returned value (user) is empty, then there is no account with this information and the user cannot log in
 }

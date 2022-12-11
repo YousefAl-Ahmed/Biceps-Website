@@ -24,10 +24,18 @@ sql = `CREATE TABLE IF NOT EXISTS users(
     height    INTEGER    NOT NULL,
     birth_date TEXT    NOT NULL,
     weight    INTEGER    NOT NULL,
-    target_weight INTEGER NOT NULL
+    target_weight INTEGER NOT NULL,
+    level TEXT NOT NULL
 )`;
 
 db.run(sql);
+// db.run(`DROP TABLE users`)
+
+db.run(`INSERT INTO users(email, username, password, gender, height, birth_date, weight, target_weight, level) VALUES(?,?,?,?,?,?,?,?,?)`, ['alawi1289@gmail.com', 'alawi', '1234', 'male', 165, '99', 11, 200, 'old'], function (err) {
+    if (err) {
+        return console.log(err.message);
+    }
+});
 
 
 sql = `CREATE TABLE IF NOT EXISTS plan(
@@ -41,11 +49,11 @@ db.run(sql);
 
 
 //---------------------print table names---------------------------
-// db.serialize(function () {
-//     db.all("select name from sqlite_master where type='table'", function (err, tables) {
-//         console.log(tables);
-//     });
-// });
+db.serialize(function () {
+    db.all("select name from sqlite_master where type='table'", function (err, tables) {
+        console.log(tables);
+    });
+});
 
 sql = `CREATE TABLE IF NOT EXISTS exercices(
         exercise_id INTEGER PRIMARY KEY,
@@ -459,27 +467,27 @@ sql = `CREATE TABLE IF NOT EXISTS exercices(
 //         exercice31, exercice32, exercice33, exercice34, exercice35, exercice36,
 //         exercice37, exercice38, exercice39, exercice40, exercice41, exercice42,
 //         exercice43, exercice44, exercice45, exercice46, exercice47, exercice48];
-//     //insert all exercices in the database
-//     for (let i = 0; i < exercises.length; i++) {
-//         db.run(`INSERT INTO exercices VALUES(?,?,?,?,?,?)`, exercises[i], function (err) {
-//             if (err) {
-//                 return console.log(err.message);
-//             }
-//             // get the last insert id
-//             console.log(`A row has been inserted with rowid ${this.lastID}`);
-//         });
-//     }
+    // insert all exercices in the database
+    // for (let i = 0; i < exercises.length; i++) {
+    //     db.run(`INSERT INTO exercices VALUES(?,?,?,?,?,?)`, exercises[i], function (err) {
+    //         if (err) {
+    //             return console.log(err.message);
+    //         }
+    //         // get the last insert id
+    //         console.log(`A row has been inserted with rowid ${this.lastID}`);
+    //     });
+    // }
 
 
-sql = `SELECT * FROM exercices`;
+// sql = `SELECT * FROM exercices`;
 
-db.all(sql, [], (err, rows) => {
-  if (err) {
-    throw err;
-  }
-  rows.forEach((row) => {
-    console.log(row);
-  });
-});
+// db.all(sql, [], (err, rows) => {
+//   if (err) {
+//     throw err;
+//   }
+//   rows.forEach((row) => {
+//     console.log(row);
+//   });
+// });
 
 

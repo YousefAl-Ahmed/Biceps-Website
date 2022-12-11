@@ -1,5 +1,6 @@
 const express = require("express");
 const session = require("express-session");
+const bcrypt = require("bcryptjs")
 
 const path = require('path');
 
@@ -41,15 +42,25 @@ app.get("/register", async (req, res) => {
 
 app.post("/", async (req, res) => {
     console.log(req.body);
+
     const email = req.body.email;
     const username = req.body.username;
     const password = req.body.password;
+    const weight = req.body.weight;
+    const target_weight = req.body.target_weight;
+    const height = req.body.height;
+    const gender = req.body.gender;
+    const level = req.body.level;
+    const birth_date = req.body.birth_date;
 
-    //check if this account is new or not
-    // console.log(auth.authUser(email, username, password));
-    res.render("index");
+    let hashedPassword = await bcrypt.hash(password, 8);
+    
+    const info = await auth.authUser(email, username)
+    if (info === undefined){
+        auth.addUser(email, username, hashedPassword, weight, target_weight, height, gender, level, birth_date)
+    }
+    res.render("logIn");
 });
-
 
 
 
