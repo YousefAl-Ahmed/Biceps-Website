@@ -68,49 +68,49 @@ sql = `CREATE TABLE IF NOT EXISTS exercices(
     let exercice2 = [2, 'Incline bench press', `Step 1: Unrack the weighted bar and slowly lower it to your chest.\n
     Step 2: Touch the bar to your chest, then lift the bar by extending your arms. Avoid locking out to maintain tension on your chest muscles.\n
     Step 3: Repeat for desired repetitions before re-racking.`
-        , 'incline-bench-press.png',
+        , 'incline-bench-press.png'
         , 'https://youtu.be/DbFgADa2PL8'
         , 'chest'];
     
     let exercice3 = [3, 'Flat bench press', `Step 1: Lie on a flat bench with your feet flat on the floor and your knees bent. Grasp the bar with a shoulder-width grip and lift it off the rack.\n
     Step 2: Lower the bar to your chest by bending your elbows. Pause, then push the bar back to the starting position.\n
     Step 3: Repeat for desired repetitions before re-racking.`
-        , 'flat-bench-press.png',
+        , 'flat-bench-press.png'
         , 'https://youtu.be/ZOwwBk642SI'
         , 'chest'];
     
     let exercice4 = [4, 'Cable chest fly', `Step 1: Attach a rope handle to a low pulley and stand with your feet shoulder-width apart. Grasp the rope with an overhand grip and hold it at shoulder height with your elbows slightly bent.\n
     Step 2: Keeping your elbows close to your body, pull the rope down and out to the sides until your arms are fully extended. Pause, then slowly return to the starting position.\n
     Step 3: Repeat for desired repetitions.`
-        , 'cable-chest-fly.png',
+        , 'cable-chest-fly.png'
         , 'https://youtu.be/TR4FdOs_7PY'
         , 'chest'];
     
     let exercice5 = [5, 'Decline bench press', `Step 1: Lie on a decline bench with your feet flat on the floor and your knees bent. Grasp the bar with a shoulder-width grip and lift it off the rack.\n
     Step 2: Lower the bar to your chest by bending your elbows. Pause, then push the bar back to the starting position.\n
     Step 3: Repeat for desired repetitions before re-racking.`
-        , 'decline-bench-press.png',
+        , 'decline-bench-press.png'
         , 'https://youtu.be/NM5lbuq92Aw'
         , 'chest'];
     
     let exercice6 = [6, 'Dumbbell pull over', `Step 1: Lie on a flat bench with a dumbbell in each hand. Grasp the dumbbells with an overhand grip and extend your arms above your chest.\n
     Step 2: Keeping your elbows close to your body, pull the dumbbells down and out to the sides until your arms are fully extended. Pause, then slowly return to the starting position.\n
     Step 3: Repeat for desired repetitions.`
-        , 'dumbbell-pullover.png',
+        , 'dumbbell-pullover.png'
         , 'https://youtu.be/zUVzVXMh9Nc'
         , 'chest'];
     
     let exercice7 = [7, 'Skull crusher', `Step 1: Lie on a flat bench with a dumbbell in each hand. Grasp the dumbbells with an overhand grip and extend your arms above your chest.\n
     Step 2: Keeping your elbows close to your body, pull the dumbbells down and out to the sides until your arms are fully extended. Pause, then slowly return to the starting position.\n
     Step 3: Repeat for desired repetitions.`
-        , 'skullcrusher.png',
+        , 'skullcrusher.png'
         , 'https://youtu.be/BdqzYZmL2Bc'
         , 'triceps'];
     
     let exercice8 = [8, 'Bench dip', `Step 1: Grasp the parallel bars and hop up so your arms are straight. Lean forward at about a 45-degree angle, bend at the waist, so your legs are vertical, and pull your toes up toward your shins. Pull your shoulders down and back. Maintain this body position throughout the exercise.\n
     Step 2: Slowly bend your elbows to lower your body into the Dip until your upper arms are about parallel to the ground. Keep your elbows tight to your body.\n
     Step 3: Straighten your arms to drive your body up to the starting position.`
-        , 'bench-dip.png',
+        , 'bench-dip.png'
         , 'https://youtu.be/lPXJMzFXFvc'
         , 'triceps'];
     
@@ -451,24 +451,35 @@ sql = `CREATE TABLE IF NOT EXISTS exercices(
         , 'shoulder'];
     
     //put all exercices in an array
-    let exercises = [exercice1, exercice2, exercice3, exercice4, exercice5, exercice6,
-        exercice7, exercice8, exercice9, exercice10, exercice11, exercice12,
-        exercice13, exercice14, exercice15, exercice16, exercice17, exercice18,
-        exercice19, exercice20, exercice21, exercice22, exercice23, exercice24,
-        exercice25, exercice26, exercice27, exercice28, exercice29, exercice30,
-        exercice31, exercice32, exercice33, exercice34, exercice35, exercice36,
-        exercice37, exercice38, exercice39, exercice40, exercice41, exercice42,
-        exercice43, exercice44, exercice45, exercice46, exercice47, exercice48];
-    //insert all exercices in the database
-    for (let i = 0; i < exercises.length; i++) {
-        db.run(`INSERT INTO exercices VALUES(?,?,?,?,?,?)`, exercises[i], function (err) {
-            if (err) {
-                return console.log(err.message);
-            }
-            // get the last insert id
-            console.log(`A row has been inserted with rowid ${this.lastID}`);
-        });
-    }
+//     let exercises = [exercice1, exercice2, exercice3, exercice4, exercice5, exercice6,
+//         exercice7, exercice8, exercice9, exercice10, exercice11, exercice12,
+//         exercice13, exercice14, exercice15, exercice16, exercice17, exercice18,
+//         exercice19, exercice20, exercice21, exercice22, exercice23, exercice24,
+//         exercice25, exercice26, exercice27, exercice28, exercice29, exercice30,
+//         exercice31, exercice32, exercice33, exercice34, exercice35, exercice36,
+//         exercice37, exercice38, exercice39, exercice40, exercice41, exercice42,
+//         exercice43, exercice44, exercice45, exercice46, exercice47, exercice48];
+//     //insert all exercices in the database
+//     for (let i = 0; i < exercises.length; i++) {
+//         db.run(`INSERT INTO exercices VALUES(?,?,?,?,?,?)`, exercises[i], function (err) {
+//             if (err) {
+//                 return console.log(err.message);
+//             }
+//             // get the last insert id
+//             console.log(`A row has been inserted with rowid ${this.lastID}`);
+//         });
+//     }
 
-    
+
+sql = `SELECT * FROM exercices`;
+
+db.all(sql, [], (err, rows) => {
+  if (err) {
+    throw err;
+  }
+  rows.forEach((row) => {
+    console.log(row);
+  });
+});
+
 
