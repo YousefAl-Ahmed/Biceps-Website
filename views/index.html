@@ -12,15 +12,42 @@
 
 <body class="indexBody">
 
+    <nav class="userNav">
 
-    <nav>
-
-        <h2 class="websiteName">Biceps</h2>
-        <button class="logInButton"><a href="/logIn">Log In</a></button>
-        <button class="signUpButton"><a href="/signUp">Sign Up</a></button>
-
-
-    </nav>
+        <div>
+          <h2 class="websiteName">Biceps</h2>
+        </div>
+      
+        <a href="#" class="toggle-button">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </a>
+      
+        <div class="navbar-links">
+      
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Workouts</a></li>
+            <li><a href="">My plans</a></li>
+            <li class="profileNav"><a href="">My Profile</a></li>
+            <li class="logOutNav"><a href="">Log out</a></li>
+      
+            <label class="dropdown">
+      
+              <div class="dd-button"> My Account</div>
+      
+              <input type="checkbox" class="dd-input" id="test">
+      
+              <ul class="dd-menu">
+                <li><a href="">My Profile</a></li>
+                <li><a href="">Log out</a></li>
+              </ul>
+            </label>
+          </ul>
+        </div>
+      
+      </nav>
 
 
     <section class="homePage">
@@ -33,6 +60,9 @@
             <button class="workoutsButton"><a href="/views/body-parts.html">Workouts</a></button>
         </div>
     </section>
+
+
+    <script src="/js/navbar.js"></script>
 
 </body>
 
