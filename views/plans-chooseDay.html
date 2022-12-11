@@ -9,6 +9,8 @@
     <script src="https://kit.fontawesome.com/c4ecd2a57e.js" crossorigin="anonymous"></script>
 
 
+
+
     <title>Choose day</title>
 </head>
 
@@ -34,13 +36,16 @@
         <div>
 
             <div class="planNameDiv">
-                <h1 class="chooseDayPlanName" contenteditable="true">Plan name</h1>
-                <i class="fa-solid fa-pencil" style="color: white; font-size: 36px;"></i>
+                <input  class="chooseDayPlanName" placeholder="Choose plan name" type="text" id="planName">
+                <button onclick="getPlanValue()" >save</button>
+
+                <!-- <i class="fa-solid fa-pencil" style="color: white; font-size: 36px;"></i> -->
             </div>
+            
 
             <div class="cards-container">
                 <!-- for each plan there is a div (query the plans from the database) -->
-                <a style="text-decoration:none" href="/views/addExcercise.html">
+                <a onclick="sunday()" style="text-decoration:none" href="/views/addExcercise.html" >
                     <div class="card2 sunday-card">
                         <!-- Day name -->
                         <p class="dayText">Sunday</p>
@@ -48,7 +53,7 @@
 
                     </div>
                 </a>
-                <a style="text-decoration:none" href="/views/addExcercise.html">
+                <a onclick="monday()" style="text-decoration:none" href="/views/addExcercise.html">
 
                     <div class="card2">
 
@@ -87,6 +92,25 @@
 
                     </div>
                 </a>
+                <a style="text-decoration:none" href="/views/addExcercise.html">
+
+                    <div class="card2">
+
+                        <!-- Day name -->
+                        <p class="dayText">Friday</p>
+
+
+                    </div>
+                </a>
+                <a class="saturday-card" onclick="myFunction()" style="text-decoration:none" href="/views/addExcercise.html">
+                    <div class="card2">
+
+                        <!-- Day name -->
+                        <p class="dayText">Saturday</p>
+
+
+                    </div>
+                </a>
 
 
             </div>
@@ -94,6 +118,7 @@
 
     </div>
 
+    <script src="/js/frontEnd.js"></script>
 
 
 </body>
