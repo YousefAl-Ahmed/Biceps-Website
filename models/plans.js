@@ -5,7 +5,7 @@ const sqlite = require('sqlite')
 
 const getDbConnection = async () => {
     return await sqlite.open({
-        filename: 'albayat.db3',
+        filename: 'albayat.db',
         driver: sqlite3.Database
     })
 }
@@ -13,7 +13,7 @@ const getDbConnection = async () => {
 
 const showExercises = async (muscle) => {
     const db = await getDbConnection();
-    const exercises = await db.all(`SELECT * FROM exercise WHERE muscle = '${muscle}'`);
+    const exercises = await db.all(`SELECT * FROM exercices WHERE muscle = '${muscle}'`);
     await db.close();
     return exercises;
 }

@@ -1,6 +1,6 @@
 const express = require("express");
 const session = require("express-session");
-const nunjucks= require("nunjucks");
+
 const path = require('path');
 
 //models
@@ -46,7 +46,7 @@ app.post("/", async (req, res) => {
     const password = req.body.password;
 
     //check if this account is new or not
-    console.log(auth.authUser(email, username, password));
+    // console.log(auth.authUser(email, username, password));
     res.render("index");
 });
 
@@ -65,7 +65,7 @@ app.get("/body-parts", async (req, res) => {
 
 app.get("/body-parts/:muscle", async (req, res) => {
     const muscle = req.params.muscle;
-    res.render("workouts", {workouts: plans.showExercises(muscle)});
+    res.render("workouts", {workouts: await plans.showExercises(muscle)});
 });
 
 
