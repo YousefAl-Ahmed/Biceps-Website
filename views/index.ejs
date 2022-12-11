@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/style/style.css">
+  <title>home</title>
+</head>
+
+<body class="indexBody">
+
+
+  <% if (typeof user != 'undefined') { %>
+    <%- include("./partials/userNav.ejs") %> 
+  <% } else {%>
+    <%- include("./partials/guestNav.ejs") %> 
+  <% } %> 
+
+  <section class="homePage">
+    <div>
+      <h1 class="motivation">OVER COME YOUR FEARS</h1>
+    </div>
+
+
+    <div class="buttonsContanior">
+      <button class="workoutsButton"><a href="body-parts">Workouts</a></button>
+    </div>
+  </section>
+
+
+  <script src="/js/navbar.js"></script>
+
+</body>
+
+</html>
