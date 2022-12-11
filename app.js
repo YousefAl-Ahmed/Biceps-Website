@@ -33,14 +33,39 @@ app.get("/", async (req, res) => {
     res.render("index");
 });
 
-//sign up routes
+//------------------register routes----------------------------
 app.get("/register", async (req, res) => {
     res.render("register");
 });
 
+
+app.post("/", async (req, res) => {
+    console.log(req.body);
+    const email = req.body.email;
+    const username = req.body.username;
+    const password = req.body.password;
+
+    //check if this account is new or not
+    console.log(auth.authUser(email, username, password));
+    res.render("index");
+});
+
+
+
+
 //log in routes
 app.get("/logIn", async (req, res) => {
     res.render("logIn");
+});
+
+//workouts route
+app.get("/body-parts", async (req, res) => {
+    res.render("body-parts");
+});
+
+app.get("/body-parts/:muscle", async (req, res) => {
+    const muscle = req.params.muscle;
+    res.render("workouts", {workouts: plans.showExercises(muscle)});
 });
 
 
