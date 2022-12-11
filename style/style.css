@@ -65,27 +65,46 @@ button:hover {
 
 nav {
     background-color: rgba(237, 235, 235, 0.25);
-    height: 12vh;
     display: flex;
+    position: relative;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 100px;
+    color: white;
+    padding: 20px;
 }
 
-
 nav a,
-.homePage a {
+a {
     display: inline;
     text-decoration: none;
     font-size: 1.9rem;
-    color: var(--yellow-color);
+    color: rgb(255, 255, 255);
     padding: 10px;
+}
+
+a {
+    color: black;
 }
 
 nav li {
     list-style: none;
-    padding: 3em;
+    display: inline;
 }
+
+.navbar-links ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+
+
+.profileNav, .logOutNav{
+    display: none;
+}
+
+
 
 ul {
     list-style: none
@@ -94,6 +113,26 @@ ul {
 h2 {
     font-size: 2rem;
 }
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
 
 
 /* --------------------------------- logIn ---------------------------------*/
@@ -569,6 +608,8 @@ h2 {
     display: inline-block;
     position: relative;
     margin-right: 2em;
+    margin-bottom: 0;
+    color: black;
 }
 
 .dd-button {
@@ -581,7 +622,6 @@ h2 {
     white-space: nowrap;
     border-radius: 20px;
     transition: 0.3s;
-
 }
 
 .dd-button:after {
@@ -628,6 +668,7 @@ h2 {
     padding: 10px 20px;
     cursor: pointer;
     white-space: nowrap;
+    color: white;
 }
 
 .dd-menu li:hover {
@@ -638,6 +679,8 @@ h2 {
     display: block;
     margin: -10px -20px;
     padding: 10px 20px;
+    color: rgb(0, 0, 0);
+    background-color: white;
 }
 
 .dd-menu li.divider {
@@ -869,4 +912,61 @@ h2 {
         font-size: 2rem;
     }
 
+}
+
+@media (max-width: 1090px) {
+
+    .websiteName{
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 0;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links li {
+        padding: 10px;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .dropdown{
+        display: none;
+    }
+
+    .profileNav, .logOutNav{
+        display: contents;
+    }
+    
+
+    
 }
