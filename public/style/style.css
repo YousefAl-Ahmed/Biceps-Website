@@ -91,7 +91,7 @@ nav li {
     display: inline;
 }
 
-.navbar-links ul{
+.navbar-links ul {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,7 +100,8 @@ nav li {
 
 
 
-.profileNav, .logOutNav{
+.profileNav,
+.logOutNav {
     display: none;
 }
 
@@ -211,6 +212,7 @@ h2 {
 
 .signUp {
     color: black;
+    font-size: 1rem;
 }
 
 .signUp:hover {
@@ -671,6 +673,8 @@ h2 {
     color: white;
 }
 
+
+/* ------------- fix it later ------------- */
 .dd-menu li:hover {
     background-color: #f6f6f6;
 }
@@ -916,7 +920,7 @@ h2 {
 
 @media (max-width: 1090px) {
 
-    .websiteName{
+    .websiteName {
         margin-bottom: 50px;
         text-align: center;
     }
@@ -959,14 +963,15 @@ h2 {
         display: flex;
     }
 
-    .dropdown{
+    .dropdown {
         display: none;
     }
 
-    .profileNav, .logOutNav{
+    .profileNav,
+    .logOutNav {
         display: contents;
     }
-    
 
-    
+
+
 }
