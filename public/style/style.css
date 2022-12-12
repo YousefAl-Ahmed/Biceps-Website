@@ -328,6 +328,10 @@ h2 {
     margin: 2rem 0;
 }
 
+.btn-prev, .btn-next{
+    font-size: 1rem;
+}
+
 @keyframes animate {
     from {
         transform: scale(1, 0);

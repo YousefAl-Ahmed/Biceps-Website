@@ -475,33 +475,33 @@ let exercises = [exercice1, exercice2, exercice3, exercice4, exercice5, exercice
 //         });
 //     }
 
-for (let i = 0; i < exercises.length; i++) {
-    db.run(`UPDATE exercices SET url = ? WHERE exercise_id = ?`, [exercises[i][4], exercises[i][0]], function (err) {
-        if (err) {
-            return console.error(err.message);
-        }
-        console.log(`Row(s) updated: ${this.changes}`);
-    });
-}
+// for (let i = 0; i < exercises.length; i++) {
+//     db.run(`UPDATE exercices SET url = ? WHERE exercise_id = ?`, [exercises[i][4], exercises[i][0]], function (err) {
+//         if (err) {
+//             return console.error(err.message);
+//         }
+//         console.log(`Row(s) updated: ${this.changes}`);
+//     });
+// }
 
-for (let i = 0; i < exercises.length; i++) {
-    db.run(`UPDATE exercices SET description = ? WHERE exercise_id = ?`, [exercises[i][2], exercises[i][0]], function (err) {
-        if (err) {
-            return console.error(err.message);
-        }
-        console.log(`Row(s) updated: ${this.changes}`);
-    });
-}
-sql = `SELECT * FROM exercices`;
+// for (let i = 0; i < exercises.length; i++) {
+//     db.run(`UPDATE exercices SET description = ? WHERE exercise_id = ?`, [exercises[i][2], exercises[i][0]], function (err) {
+//         if (err) {
+//             return console.error(err.message);
+//         }
+//         console.log(`Row(s) updated: ${this.changes}`);
+//     });
+// }
+// sql = `SELECT * FROM exercices`;
 
-db.all(sql, [], (err, rows) => {
-    if (err) {
-        throw err;
-    }
-    rows.forEach((row) => {
-        console.log(row);
-    });
-});
+// db.all(sql, [], (err, rows) => {
+//     if (err) {
+//         throw err;
+//     }
+//     rows.forEach((row) => {
+//         console.log(row);
+//     });
+// });
 //update url of all execrices
 
 

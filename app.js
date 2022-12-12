@@ -114,4 +114,11 @@ app.get("/body-parts/:muscle/:workout", async (req, res) => {
 });
 
 
+//plans route
+//workouts route
+app.get("/plans", async (req, res) => {
+    res.render("plans", {user: req.session.user});
+});
+
+
 app.listen(3000);
