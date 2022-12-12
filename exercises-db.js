@@ -420,3 +420,12 @@ for (let i = 0; i < exercises.length; i++) {
         console.log(`A row has been inserted with rowid ${this.lastID}`);
     });
 }
+//update the description of all exercices
+for (let i = 0; i < exercises.length; i++) {
+    db.run(`UPDATE exercices SET description = ? WHERE id = ?`, [exercises[i][2], exercises[i][0]], function (err) {
+        if (err) {
+            return console.error(err.message);
+        }
+        console.log(`Row(s) updated: ${this.changes}`);
+    });
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <title>Description</title>
+</head>
+
+<body>
+    <nav class="planHeader">
+        <h2 class="websiteName">Biceps</h2>
+        <button class="logInButton"><a href="/logIn">Log In</a></button>
+        <button class="signUpButton"><a href="/signUp">Sign Up</a></button>
+    </nav>
+    <form>
+        <input class="previous round db" type="button" value="&#8249;" onclick="history.back()">
+
+    </form>
+    <!-- <a href="#" class="previous round db">&#8249;</a> -->
+    <div class="main-description-container">
+        <div class="workout-header">
+            <h2 class="plans-title description-title">
+                <%=workout[0].name %>
+            </h2>
+        </div>
+
+        <div class="description-container">
+            <p>
+            <pre class="description-text"> <%=workout[0].description %></pre>
+            </p>
+        </div>
+        <div class="video-frame">
+            <iframe width="700" height="450" src="<%=workout[0].url %>" title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+
+    </div>
+</body>
+
+</html>

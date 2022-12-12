@@ -24,6 +24,8 @@
 
 body {
     background: linear-gradient(219.58deg, #010417 10.26%, #2B333F 84.25%);
+    background-image: url('/img/bodybg.png');
+    background-size: cover;
 }
 
 
@@ -370,7 +372,8 @@ h2 {
     gap: 10px;
 }
 
-.price-container h2 {
+.price-container,
+h2 {
     text-align: center;
 }
 
@@ -737,9 +740,90 @@ h2 {
 
 
 /* -------------------------body parts ------------------------------- */
+.db {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    height: 60px;
+    width: 60px;
+}
+
+.db:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.previous {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+
+.round {
+    text-align: center;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 72%;
+    margin: 2rem;
+    border-radius: 50%;
+}
 
 .plans-title {
     color: white;
+
+}
+
+.main-description-container {
+    /* display: ; */
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    height: 700px;
+    margin: 0 3rem 0 3rem;
+}
+
+.description-text {
+    color: white;
+    font-size: 1.2rem;
+    /* overflow-x: hidden; */
+    white-space: pre-line;
+
+}
+
+/* make yello border and grident back ground for workout-head */
+.workout-header {
+    /* background-color: var(--yellow-color); */
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.24) 0%, rgba(0, 0, 0, 0.623) 100%);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    padding: 10px;
+    width: 90%;
+    margin: 3rem 3rem 3rem 3rem;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.description-container {
+
+    width: 90%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.24) 0%, rgba(0, 0, 0, 0.623) 100%);
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* gap: 1.5rem; */
+    margin: 3rem 3rem 3rem 3rem;
+}
+
+.video-frame {
+
+    margin: 0 3rem 0 3rem;
 }
 
 .main-cards-container {
@@ -793,7 +877,8 @@ h2 {
 .card-img {
     width: 105%;
     height: 100%;
-    margin-bottom: -20px;
+    margin-bottom: -25px;
+    margin-left: -10px;
 }
 
 .card:hover {

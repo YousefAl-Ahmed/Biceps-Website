@@ -64,6 +64,13 @@ app.post("/auth", async (req, res) => {
     }else res.render("register", {message: "not unique"})
 });
 
+
+
+app.get("/body-parts/:muscle/:workout", async (req, res) => {
+    // const muscle = req.params.muscle;
+    const workout = req.params.workout;
+    res.render("description", { workout: await plans.showWorkout(workout) });
+});
 //log in routes
 app.get("/logIn", async (req, res) => {
     res.render("logIn");

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/style.css">
     <!-- {{workout.title}} -->
-    <title>Chest workouts</title>
+    <title>Workouts</title>
 </head>
 
 <body>
@@ -16,6 +16,10 @@
         <button class="logInButton"><a href="/logIn">Log In</a></button>
         <button class="signUpButton"><a href="/signUp">Sign Up</a></button>
     </nav>
+    <form>
+        <input class="previous round db" type="button" value="&#8249;" onclick="history.back()">
+
+    </form>
 
     <div class="main-cards-container">
         <!-- {{workout.title}} -->
@@ -24,75 +28,92 @@
 
             <div class="card">
                 <!-- views/workout-discription/{{workout.id}}/{{workout.discription}} -->
-                <a href="" target="_self">
+                <a href="/body-parts/<%= workouts[0].muscle %>/<%= workouts[0].name %>" target="_self">
                     <!-- img/{{workout.name}}-workouts/{{workout.img}} -->
-                    <img class="card-img" src="../img/abs-workouts/leg-raise.png" alt="">
+                    <img class="card-img" src="../img/<%= workouts[0].muscle %>-workouts/<%= workouts[0].img %>"
+                        alt="<%= workouts[0].name %>">
                 </a>
                 <div class="card-title">
                     <!-- {{workout.name}} -->
-                    <p><%= workouts[0].name  %> </p>
+                    <p>
+                        <%= workouts[0].name %>
+                    </p>
                 </div>
             </div>
 
 
-            
             <div class="card">
                 <!-- views/workout-discription/{{workout.id}}/{{workout.discription}} -->
-                <a href="" target="_self">
+                <a href="/body-parts/<%= workouts[1].muscle %>/<%= workouts[1].name %>" target="_self">
                     <!-- img/{{workout.name}}-workouts/{{workout.img}} -->
-                    <img class="card-img" src="/img/chest-workouts/incline-bench-press.png" alt="">
+                    <img class="card-img" src="../img/<%= workouts[1].muscle %>-workouts/<%= workouts[1].img %>"
+                        alt="<%= workouts[1].name %>">
                 </a>
                 <div class="card-title">
                     <!-- {{workout.name}} -->
-                    <p>Incline bench press </p>
-                </div>
-
-            </div>
-            <div class="card">
-                <!-- views/workout-discription/{{workout.id}}/{{workout.discription}} -->
-                <a href="" target="_self">
-                    <!-- img/{{workout.name}}-workouts/{{workout.img}} -->
-                    <img id="workout" class="card-img" src="/img/chest-workouts/flat-chest-press.png" alt="">
-                </a>
-                <div class="card-title">
-                    <!-- {{workout.name}} -->
-                    <p>Flat chest press</p>
+                    <p>
+                        <%= workouts[1].name %>
+                    </p>
                 </div>
 
             </div>
             <div class="card">
                 <!-- views/workout-discription/{{workout.id}}/{{workout.discription}} -->
-                <a href="" target="_self">
+                <a href="/body-parts/<%= workouts[2].muscle %>/<%= workouts[2].name %>" target="_self">
                     <!-- img/{{workout.name}}-workouts/{{workout.img}} -->
-                    <img class="card-img" src="/img/chest-workouts/cable-chest-fly.png" alt="">
+                    <img class="card-img" src="../img/<%= workouts[2].muscle %>-workouts/<%= workouts[2].img %>"
+                        alt="<%= workouts[2].name %>">
                 </a>
                 <div class="card-title">
                     <!-- {{workout.name}} -->
-                    <p>Cable chest flys</p>
+                    <p>
+                        <%= workouts[2].name %>
+                    </p>
                 </div>
 
             </div>
             <div class="card">
                 <!-- views/workout-discription/{{workout.id}}/{{workout.discription}} -->
-                <a href="" target="_self">
+                <a href="/body-parts/<%= workouts[3].muscle %>/<%= workouts[3].name %>" target="_self">
                     <!-- img/{{workout.name}}-workouts/{{workout.img}} -->
-                    <img class="card-img" src="/img/chest-workouts/decline-press.png" alt="">
+                    <img class="card-img" src="../img/<%= workouts[3].muscle %>-workouts/<%= workouts[3].img %>"
+                        alt="<%= workouts[3].name %>">
                 </a>
                 <div class="card-title">
                     <!-- {{workout.name}} -->
-                    <p>Decline press</p>
+                    <p>
+                        <%= workouts[3].name %>
+                    </p>
                 </div>
 
             </div>
             <div class="card">
                 <!-- views/workout-discription/{{workout.id}}/{{workout.discription}} -->
-                <a href="" target="_self">
+                <a href="/body-parts/<%= workouts[4].muscle %>/<%= workouts[4].name %>" target="_self">
                     <!-- img/{{workout.name}}-workouts/{{workout.img}} -->
-                    <img class="card-img" src="/img/chest-workouts/dumbbell-pullover.png" alt="">
+                    <img class="card-img" src="../img/<%= workouts[4].muscle %>-workouts/<%= workouts[4].img %>"
+                        alt="<%= workouts[4].name %>">
                 </a>
                 <div class="card-title">
                     <!-- {{workout.name}} -->
-                    <p>Dumbbell pullover</p>
+                    <p>
+                        <%= workouts[4].name %>
+                    </p>
+                </div>
+
+            </div>
+            <div class="card">
+                <!-- views/workout-discription/{{workout.id}}/{{workout.discription}} -->
+                <a href="/body-parts/<%= workouts[5].muscle %>/<%= workouts[5].name %>" target="_self">
+                    <!-- img/{{workout.name}}-workouts/{{workout.img}} -->
+                    <img class="card-img" src="../img/<%= workouts[5].muscle %>-workouts/<%= workouts[5].img %>"
+                        alt="<%= workouts[5].name %>">
+                </a>
+                <div class="card-title">
+                    <!-- {{workout.name}} -->
+                    <p>
+                        <%= workouts[5].name %>
+                    </p>
                 </div>
 
 
