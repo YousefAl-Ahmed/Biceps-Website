@@ -41,6 +41,8 @@ app.get("/register", async (req, res) => {
 });
 
 
+
+
 app.post("/auth", async (req, res) => {
 
 
@@ -111,6 +113,24 @@ app.get("/body-parts/:muscle/:workout", async (req, res) => {
     // const muscle = req.params.muscle;
     const workout = req.params.workout;
     res.render("description", { workout: await plans.showWorkout(workout), user: req.session.user});
+});
+app.get("/plans-chooseDay" , async (req, res) => {
+    res.render("plans-chooseDay");
+});
+
+
+app.get( "/addExcercise/:day", async (req, res) => {
+    const day = req.params.day;
+    res.render('addExcercise', {day: day});
+});
+app.get("/plans-chooseDay" , async (req, res) => {
+    res.render("plans-chooseDay");
+});
+
+
+app.get( "/addExcercise/:day", async (req, res) => {
+    const day = req.params.day;
+    res.render('addExcercise', {day: day});
 });
 
 

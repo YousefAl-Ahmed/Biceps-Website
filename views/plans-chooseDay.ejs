@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style/style.css">
     <script src="https://kit.fontawesome.com/c4ecd2a57e.js" crossorigin="anonymous"></script>
+    <script defer src="/js/getplan.js"></script>
 
 
 
@@ -31,21 +32,21 @@
 
 
     <div class="main-cards-container">
-
+<script> const newplanName=localStorage.getItem('planName')
+console.log(newplanName)
+</script>
         <!-- <div class="grid"> -->
         <div>
-
             <div class="planNameDiv">
-                <input  class="chooseDayPlanName" placeholder="Choose plan name" type="text" id="planName">
-                <button onclick="getPlanValue()" >save</button>
+                <p class="chooseDayPlanName">
+                </p>
 
                 <!-- <i class="fa-solid fa-pencil" style="color: white; font-size: 36px;"></i> -->
             </div>
             
 
             <div class="cards-container">
-                <!-- for each plan there is a div (query the plans from the database) -->
-                <a onclick="sunday()" style="text-decoration:none" href="/views/addExcercise.html" >
+                <a  style="text-decoration:none" href="/addExcercise/Sunday" >
                     <div class="card2 sunday-card">
                         <!-- Day name -->
                         <p class="dayText">Sunday</p>
@@ -53,7 +54,7 @@
 
                     </div>
                 </a>
-                <a onclick="monday()" style="text-decoration:none" href="/views/addExcercise.html">
+                <a  style="text-decoration:none" href="/addExcercise/Monday">
 
                     <div class="card2">
 
@@ -62,7 +63,7 @@
 
                     </div>
                 </a>
-                <a style="text-decoration:none" href="/views/addExcercise.html">
+                <a style="text-decoration:none" href="/addExcercise/Tuesday">
 
                     <div class="card2">
 
@@ -72,7 +73,7 @@
 
                     </div>
                 </a>
-                <a style="text-decoration:none" href="/views/addExcercise.html">
+                <a style="text-decoration:none" href="/addExcercise/Wednesday">
 
                     <div class="card2">
 
@@ -82,7 +83,7 @@
 
                     </div>
                 </a>
-                <a style="text-decoration:none" href="/views/addExcercise.html">
+                <a style="text-decoration:none" href="/addExcercise/Thursday">
 
                     <div class="card2">
 
@@ -92,7 +93,7 @@
 
                     </div>
                 </a>
-                <a style="text-decoration:none" href="/views/addExcercise.html">
+                <a style="text-decoration:none" href="/addExcercise/Friday">
 
                     <div class="card2">
 
@@ -102,7 +103,7 @@
 
                     </div>
                 </a>
-                <a class="saturday-card" onclick="myFunction()" style="text-decoration:none" href="/views/addExcercise.html">
+                <a class="saturday-card" onclick="myFunction()" style="text-decoration:none" href="/addExcercise/Saturday">
                     <div class="card2">
 
                         <!-- Day name -->
@@ -118,7 +119,6 @@
 
     </div>
 
-    <script src="/js/frontEnd.js"></script>
 
 
 </body>
