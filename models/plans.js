@@ -33,7 +33,7 @@ const getUserPlans = async (user_id) => {
 //getExercise, all exercise for a plan in a specific day (get request)
 const getPlanExercises = async (plan_id, dayName) => {
     const db = await getDbConnection();
-    const exercices  = await db.all(`SELECT DISTINCT e.name, e.exercise_id, e.img  FROM exercices e 
+    const exercices  = await db.all(`SELECT DISTINCT e.name, e.exercise_id, e.img, e.muscle  FROM exercices e 
     INNER JOIN exercise_day u ON e.exercise_id = u.exercise_id WHERE u.day = '${dayName}' AND u.plan_id = ${plan_id}`);
     await db.close();
     return exercices;
