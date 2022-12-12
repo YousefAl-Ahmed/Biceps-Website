@@ -22,7 +22,7 @@ app.use(session({
 
 //middleware & static files
 app.use(express.static("public"));
-app.use(express.urlencoded({extended: 'false'}));
+app.use(express.urlencoded({ extended: 'false' }));
 app.use(express.json());
 
 
@@ -52,7 +52,11 @@ app.post("/", async (req, res) => {
 
 
 
-
+app.get("/body-parts/:muscle/:workout", async (req, res) => {
+    // const muscle = req.params.muscle;
+    const workout = req.params.workout;
+    res.render("description", { workout: await plans.showWorkout(workout) });
+});
 //log in routes
 app.get("/logIn", async (req, res) => {
     res.render("logIn");
@@ -65,7 +69,7 @@ app.get("/body-parts", async (req, res) => {
 
 app.get("/body-parts/:muscle", async (req, res) => {
     const muscle = req.params.muscle;
-    res.render("workouts", {workouts: await plans.showExercises(muscle)});
+    res.render("workouts", { workouts: await plans.showExercises(muscle) });
 });
 
 
