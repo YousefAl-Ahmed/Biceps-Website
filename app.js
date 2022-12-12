@@ -136,18 +136,22 @@ app.post("/plans-chooseDay" , async (req, res) => {
 
 
     // plans.createPlan(id, name);
-    const plan_id =  await plans.createPlan(id, name).lastID
-    res.render("plans-chooseDay", {name: name, plan_id: plan_id, user: req.session.user});
+    const meta =  await plans.createPlan(id, name)
+    const plan_id = meta.lastID;
+
+    res.redirect(`/plans/${name}/${plan_id}`)
+    // res.render("plans-chooseDay", {name: name, plan_id: plan_id, user: req.session.user});
 });     
 
 
-app.get("/addExcercise/:day", async (req, res) => {
-    const day = req.params.day;
-    res.render('addExcercise', {day: day});
-});
+app.get("/plans/:name/:id/:day", async (req, res) => {
+    const info = req.params;
 
-app.get("/plans/:name/:id:/day", async (req, res) => {
-    res.render('addExcercise', {day: day});
+    const execrices = await plans.getPlanExercises(info.id, info.day)
+    // console.log(execrices)
+    // const day = req.params.day;
+
+    res.render('addExcercise', {execrices: execrices, day: info.day, user: req.session.user});
 });
 
 

@@ -26,29 +26,26 @@
 
     <div class="main-cards-container">
 
-        <script> const newplanName=localStorage.getItem('planName')
-        console.log(newplanName)
-        </script>
-
         <!-- <div class="grid"> -->
         <div>
             <div class="planNameDiv">
-                <p class="chooseDayPlanName"><%= name %>  </p>
+                <p class="chooseDayPlanName">
+                    <%= name %>
+                </p>
 
                 <!-- <i class="fa-solid fa-pencil" style="color: white; font-size: 36px;"></i> -->
             </div>
-            
+
 
             <div class="cards-container">
-                <a  style="text-decoration:none" href="/addExcercise/Sunday" >
+                <a style="text-decoration:none" href="/plans/<%=name%>/<%= plan_id %>/sunday">
                     <div class="card2 sunday-card">
                         <!-- Day name -->
                         <p class="dayText">Sunday</p>
-
-
                     </div>
                 </a>
-                <a  style="text-decoration:none" href="/addExcercise/Monday">
+
+                <a style="text-decoration:none" href="/plans/<%=name%>/<%= plan_id %>/monday">
 
                     <div class="card2">
 
@@ -57,7 +54,7 @@
 
                     </div>
                 </a>
-                <a style="text-decoration:none" href="/addExcercise/Tuesday">
+                <a style="text-decoration:none" href="/plans/<%=name%>/<%= plan_id %>/tuesday">
 
                     <div class="card2">
 
@@ -67,7 +64,7 @@
 
                     </div>
                 </a>
-                <a style="text-decoration:none" href="/addExcercise/Wednesday">
+                <a style="text-decoration:none" href="/plans/<%=name%>/<%= plan_id %>/wednesday">
 
                     <div class="card2">
 
@@ -77,7 +74,7 @@
 
                     </div>
                 </a>
-                <a style="text-decoration:none" href="/addExcercise/Thursday">
+                <a style="text-decoration:none" href="/plans/<%=name%>/<%= plan_id %>/thursday">
 
                     <div class="card2">
 
@@ -87,7 +84,7 @@
 
                     </div>
                 </a>
-                <a style="text-decoration:none" href="/addExcercise/Friday">
+                <a style="text-decoration:none" href="/plans/<%=name%>/<%= plan_id %>/friday">
 
                     <div class="card2">
 
@@ -97,7 +94,8 @@
 
                     </div>
                 </a>
-                <a class="saturday-card" onclick="myFunction()" style="text-decoration:none" href="/addExcercise/Saturday">
+                <a class="saturday-card" onclick="myFunction()" style="text-decoration:none"
+                    href="/addExcercise/Saturday">
                     <div class="card2">
 
                         <!-- Day name -->

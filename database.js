@@ -71,7 +71,7 @@ sql = `CREATE TABLE IF NOT EXISTS exercise_day(
         user_id INTEGER,
         exercise_id INTEGER,
         plan_id INTEGER,
-        day TEXT,
+        day TEXT NOT NULL,
         FOREIGN KEY (user_id) REFERENCES users(user_id),
         FOREIGN KEY (exercise_id) REFERENCES exercices(exercise_id),
         FOREIGN KEY (plan_id) REFERENCES plan(plan_id),
@@ -80,7 +80,7 @@ sql = `CREATE TABLE IF NOT EXISTS exercise_day(
 
         )`;
 db.run(sql);
-// db.run(`DROP TABLE EXERCISES`)
+// db.run(`DROP TABLE exercise_day`)
 
 
 // let exercice1 = [1, 'dips', `Step 1: Grasp the parallel bars and hop up so your arms are straight. Lean forward at about a 45-degree angle, bend at the waist, so your legs are vertical, and pull your toes up toward your shins. Pull your shoulders down and back. Maintain this body position throughout the exercise.

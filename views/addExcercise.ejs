@@ -15,14 +15,11 @@
 </head>
 <body class="chooseDayBody">
 
-    <nav class="chooseDayHeader">
-        <h2 class="websiteName">Biceps</h2>
-        <button class="logInButton"><a href="/logIn">Log In</a></button>
-        <button class="signUpButton"><a href="/signUp">Sign Up</a></button>
-    </nav>
-
-    
-
+    <% if (typeof user != 'undefined') { %>
+        <%- include("./partials/userNav.ejs") %> 
+      <% } else {%>
+        <%- include("./partials/guestNav.ejs") %> 
+      <% } %> 
 
 
     <div class="gridContanior">
