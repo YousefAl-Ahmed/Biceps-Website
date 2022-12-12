@@ -18,28 +18,22 @@
 <body class="chooseDayBody">
 
 
-    <nav class="chooseDayHeader">
-        <h2 class="websiteName">Biceps</h2>
-        <button class="logInButton"><a href="/logIn">Log In</a></button>
-        <button class="signUpButton"><a href="/signUp">Sign Up</a></button>
-    </nav>
-
-
-
-
-
-
-
+    <% if (typeof user != 'undefined') { %>
+        <%- include("./partials/userNav.ejs") %> 
+      <% } else {%>
+        <%- include("./partials/guestNav.ejs") %> 
+      <% } %> 
 
     <div class="main-cards-container">
-<script> const newplanName=localStorage.getItem('planName')
-console.log(newplanName)
-</script>
+
+        <script> const newplanName=localStorage.getItem('planName')
+        console.log(newplanName)
+        </script>
+
         <!-- <div class="grid"> -->
         <div>
             <div class="planNameDiv">
-                <p class="chooseDayPlanName">
-                </p>
+                <p class="chooseDayPlanName"><%= name %>  </p>
 
                 <!-- <i class="fa-solid fa-pencil" style="color: white; font-size: 36px;"></i> -->
             </div>

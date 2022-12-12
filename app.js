@@ -114,30 +114,40 @@ app.get("/body-parts/:muscle/:workout", async (req, res) => {
     const workout = req.params.workout;
     res.render("description", { workout: await plans.showWorkout(workout), user: req.session.user});
 });
-app.get("/plans-chooseDay" , async (req, res) => {
-    res.render("plans-chooseDay");
-});
-
-
-app.get( "/addExcercise/:day", async (req, res) => {
-    const day = req.params.day;
-    res.render('addExcercise', {day: day});
-});
-app.get("/plans-chooseDay" , async (req, res) => {
-    res.render("plans-chooseDay");
-});
-
-
-app.get( "/addExcercise/:day", async (req, res) => {
-    const day = req.params.day;
-    res.render('addExcercise', {day: day});
-});
 
 
 //plans route
-//workouts route
 app.get("/plans", async (req, res) => {
-    res.render("plans", {user: req.session.user});
+    const id = req.session.user.id.user_id;
+    res.render("plans", {plans: await plans.getUserPlans(id), user: req.session.user});
+});
+
+
+app.get("/plans/:name/:id" , async (req, res) => {
+    const name = req.params.name;
+    const plan_id = req.params.id;
+  
+    res.render("plans-chooseDay", {name: name, plan_id: plan_id, user: req.session.user});
+});
+
+app.post("/plans-chooseDay" , async (req, res) => {
+    const name = req.body.planNameValue;
+    const id = req.session.user.id.user_id;
+
+
+    // plans.createPlan(id, name);
+    const plan_id =  await plans.createPlan(id, name).lastID
+    res.render("plans-chooseDay", {name: name, plan_id: plan_id, user: req.session.user});
+});     
+
+
+app.get("/addExcercise/:day", async (req, res) => {
+    const day = req.params.day;
+    res.render('addExcercise', {day: day});
+});
+
+app.get("/plans/:name/:id:/day", async (req, res) => {
+    res.render('addExcercise', {day: day});
 });
 
 

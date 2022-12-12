@@ -477,7 +477,6 @@ h2 {
     grid-column: span 3;
     border-radius: 16px;
     width: 100%;
-    background: linear-gradient(85deg, #434343, #262626);
 }
 
 .readyPlansText {
