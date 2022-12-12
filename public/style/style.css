@@ -221,6 +221,10 @@ h2 {
     color: var(--red-color);
 }
 
+.plans-title{
+    margin-top: 2em;
+}
+
 
 /* --------------------------------- register page --------------------------------- */
 .Register-text {
@@ -800,7 +804,7 @@ h2 {
     border-radius: 10px;
     padding: 10px;
     width: 90%;
-    margin: 3rem 3rem 3rem 3rem;
+    margin: 6rem 3rem 3rem 3rem;
     color: black;
     font-size: 1.5rem;
     font-weight: 600;
@@ -919,6 +923,10 @@ h2 {
     font-size: 2rem;
     color: var(--white-color);
     margin: 1em;
+}
+
+.description-title{
+    margin-top: 0;
 }
 
 @media only screen and (min-width:481px) and (max-width:768px) {

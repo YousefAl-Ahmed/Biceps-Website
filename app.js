@@ -32,7 +32,7 @@ app.use(express.json());
 
 //routing 
 app.get("/", async (req, res) => {
-    res.render("index");
+    res.render("index", {user: req.session.user});
 });
 
 //------------------register routes----------------------------
@@ -66,11 +66,7 @@ app.post("/auth", async (req, res) => {
 
 
 
-app.get("/body-parts/:muscle/:workout", async (req, res) => {
-    // const muscle = req.params.muscle;
-    const workout = req.params.workout;
-    res.render("description", { workout: await plans.showWorkout(workout) });
-});
+
 //log in routes
 app.get("/logIn", async (req, res) => {
     res.render("logIn");
@@ -101,15 +97,20 @@ app.post("/", async (req, res) => {
 });
 
 
-
 //workouts route
 app.get("/body-parts", async (req, res) => {
-    res.render("body-parts");
+    res.render("body-parts", {user: req.session.user});
 });
 
 app.get("/body-parts/:muscle", async (req, res) => {
     const muscle = req.params.muscle;
-    res.render("workouts", { workouts: await plans.showExercises(muscle) });
+    res.render("workouts", { workouts: await plans.showExercises(muscle), user: req.session.user });
+});
+
+app.get("/body-parts/:muscle/:workout", async (req, res) => {
+    // const muscle = req.params.muscle;
+    const workout = req.params.workout;
+    res.render("description", { workout: await plans.showWorkout(workout), user: req.session.user});
 });
 
 
