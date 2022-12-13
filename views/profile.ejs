@@ -10,25 +10,11 @@
 </head>
 <body class="profileBody">
 
-    <nav>
-        <h2 class="websiteName">Biceps</h2>
-        <li><a href="">Home</a></li>
-        <li><a href="">My plans</a></li>
-        <li><a href="">Workouts</a></li>
-    
-        <label class="dropdown">
-    
-            <div class="dd-button"> My Account</div>
-    
-            <input type="checkbox" class="dd-input" id="test">
-    
-            <ul class="dd-menu">
-                <li><a href="">My Profile</a></li>
-                <li><a href="">Log out</a></li>
-            </ul>
-    
-        </label>   
-    </nav>>
+    <% if (typeof user != 'undefined') { %>
+        <%- include("./partials/userNav.ejs") %> 
+      <% } else {%>
+        <%- include("./partials/guestNav.ejs") %> 
+      <% } %> 
 
 
     <div class="GeneralProfileContainer Container">
@@ -37,32 +23,28 @@
         <div class="GeneralProfile">
             <div class="GeneralProfile">
                 <label class="GeneralProfileText" for="name">Name</label>
-                <input type="text" name="name">
+                <input type="text" name="name" placeholder= <%= userInfo.username%>>
             </div>
     
             <div class="GeneralProfile">
                 <label class="GeneralProfileText" for="weight">weight (kg)</label>
-                <input type="number" name="weight">
+                <input type="number" name="weight" placeholder= <%= userInfo.weight%>>
             </div>
     
             <div class="GeneralProfile">
                 <label class="GeneralProfileText" for="target weight">target weight (kg)</label>
-                <input type="number" name="target weight" placeholder="">
+                <input type="number" name="target weight" placeholder= <%= userInfo.target_weight%>>
             </div>
     
             <div class="GeneralProfile">
-                <label class="GeneralProfileText" for="height" placeholder="">height</label>
-                <input type="number" name="height" placeholder="">
+                <label class="GeneralProfileText" for="height" >height</label>
+                <input type="number" name="height" placeholder=<%= userInfo.height%>>
             </div>
-    
+
             <div class="GeneralProfile">
-                <label class="GeneralProfileText" for="Age">Age</label>
-                <input type="number" name="Age" placeholder="" disabled>
-            </div>
-            <div class="GeneralProfile">
-                <label class="GeneralProfileText" for="gender">Fitness Level</label>
+                <label class="GeneralProfileText" for="level">Fitness Level</label>
                 <select name="level" class="level">
-                    <option value="">Select Fitness Level</option>
+                    <option value=""><%= userInfo.level%></option>
                     <option value="beginner">Beginner</option>
                     <option value="intermediate">Intermediate</option>
                     <option value="advanced">Advanced</option>
@@ -97,10 +79,6 @@
                 <input type="number" name="Protien" placeholder="" disabled>
             </div>
     
-            <div class="GeneralProfile nutrition">
-                <label class="NutritionText" for="Ideal_Weight"> Ideal Weight</label>
-                <input type="number" name="Ideal_Weight" placeholder="" disabled>
-            </div>
         </div>
     </div>
     

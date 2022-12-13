@@ -50,11 +50,6 @@ const changeUserName = async (email, username, password) =>{
     await db.close();   
 }
 
-// do it later
-const changePassword = async (email, username, password) =>{
-    const db = await getDbConnection();
-    await db.close();   
-}
 
 
 const getUserID = async (email) =>{
@@ -64,11 +59,18 @@ const getUserID = async (email) =>{
     return user_id;
 }
 
+const getUserNutritions = async (id) =>{
+    const db = await getDbConnection();
+    const user = await db.get(`SELECT * FROM users WHERE user_id = '${id}'`);
+    await db.close();   
+    return user;
+}
 
 
 
 
-module.exports = {addUser, authUser, changeUserName, changePassword, getUserID, authLogIn};
+
+module.exports = {addUser, authUser, changeUserName, getUserID, authLogIn, getUserNutritions};
 
 
 

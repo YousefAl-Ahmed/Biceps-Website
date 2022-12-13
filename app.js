@@ -148,10 +148,61 @@ app.get("/plans/:name/:id/:day", async (req, res) => {
     const info = req.params;
 
     const execrices = await plans.getPlanExercises(info.id, info.day)
-    // console.log(execrices)
-    // const day = req.params.day;
 
-    res.render('addExcercise', {execrices: execrices, day: info.day, user: req.session.user});
+    const chestExecrices = await plans.showExercises("chest");
+    const backExecrices = await plans.showExercises("back");
+    const bicepsExecrices = await plans.showExercises("biceps");
+    const tricepsExecrices = await plans.showExercises("triceps");
+    const forearmsExecrices = await plans.showExercises("forearms");
+    const shoulderExecrices = await plans.showExercises("shoulder");
+    const absExecrices = await plans.showExercises("abs");
+    const legsExecrices = await plans.showExercises("legs");
+
+    const allExecrices = [chestExecrices, backExecrices, bicepsExecrices, tricepsExecrices, forearmsExecrices, shoulderExecrices, absExecrices, legsExecrices];
+    
+    res.render('addExcercise', {execrices: execrices, allExecrices: allExecrices, day: info.day, plan_id: info.id, name: info.name ,user: req.session.user});
+});
+ 
+
+app.post("/plans/:name/:id/:day", async (req, res) => {
+
+    const selectedArray = req.body;
+    const user_id = req.session.user.id.user_id;
+    const info = req.params;
+
+
+    await selectedArray.forEach (async exercise_id =>{
+        await plans.addExerciseToPlan(user_id, info.id, info.day, exercise_id); 
+            
+    }); 
+
+    const execrices = await plans.getPlanExercises(info.id, info.day)
+    // console.log(execrices)
+
+    const chestExecrices = await plans.showExercises("chest");
+    const backExecrices = await plans.showExercises("back");
+    const bicepsExecrices = await plans.showExercises("biceps");
+    const tricepsExecrices = await plans.showExercises("triceps");
+    const forearmsExecrices = await plans.showExercises("forearms");
+    const shoulderExecrices = await plans.showExercises("shoulder");
+    const absExecrices = await plans.showExercises("abs");
+    const legsExecrices = await plans.showExercises("legs");
+
+    const allExecrices = [chestExecrices, backExecrices, bicepsExecrices, tricepsExecrices, forearmsExecrices, shoulderExecrices, absExecrices, legsExecrices];
+
+
+    res.redirect(req.get('referer'));
+})
+
+
+//profile routes
+app.get("/profile/:id" , async (req, res) => {
+
+    const user_id = req.params.id;
+
+    const userInfo = await auth.getUserNutritions(user_id)
+    console.log(userInfo)
+    res.render("profile", {userInfo: userInfo, user: req.session.user})
 });
 
 
