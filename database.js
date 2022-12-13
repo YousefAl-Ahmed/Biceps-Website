@@ -31,11 +31,11 @@ sql = `CREATE TABLE IF NOT EXISTS users(
 db.run(sql);
 
 
-db.run(`INSERT INTO users(email, username, password, gender, height, birth_date, weight, target_weight, level) VALUES(?,?,?,?,?,?,?,?,?)`, ['alawi1289@gmail.com', 'alawi', '1234', 'male', 165, '99', 11, 200, 'old'], function (err) {
-    if (err) {
-        return console.log(err.message);
-    }
-});
+// db.run(`INSERT INTO users(email, username, password, gender, height, birth_date, weight, target_weight, level) VALUES(?,?,?,?,?,?,?,?,?)`, ['alawi1289@gmail.com', 'alawi', '1234', 'male', 165, '99', 11, 200, 'old'], function (err) {
+//     if (err) {
+//         return console.log(err.message);
+//     }
+// });
 
 
 sql = `CREATE TABLE IF NOT EXISTS plan(
@@ -46,25 +46,25 @@ sql = `CREATE TABLE IF NOT EXISTS plan(
 )`;
 
 db.run(sql);
-// db.run(`DROP TABLE plan`)
 
 
 
-//---------------------print table names---------------------------
+
+// //---------------------print table names---------------------------
 db.serialize(function () {
     db.all("select name from sqlite_master where type='table'", function (err, tables) {
         console.log(tables);
     });
 });
 
-sql = `CREATE TABLE IF NOT EXISTS exercices(
-        exercise_id INTEGER PRIMARY KEY,
-        name TEXT NOT NULL,
-        description TEXT NOT NULL,
-        img TEXT NOT NULL,
-        url TEXT NOT NULL,
-        muscle TEXT NOT NULL)`;
-db.run(sql);
+// sql = `CREATE TABLE IF NOT EXISTS exercices(
+//         exercise_id INTEGER PRIMARY KEY,
+//         name TEXT NOT NULL,
+//         description TEXT NOT NULL,
+//         img TEXT NOT NULL,
+//         url TEXT NOT NULL,
+//         muscle TEXT NOT NULL)`;
+// db.run(sql);
 
 
 sql = `CREATE TABLE IF NOT EXISTS exercise_day(
@@ -80,7 +80,9 @@ sql = `CREATE TABLE IF NOT EXISTS exercise_day(
 
         )`;
 db.run(sql);
+// db.run(`DROP TABLE exercise_day`)
 // db.run(`DROP TABLE plan`)
+// db.run(`DROP TABLE users`)
 
 
 // let exercice1 = [1, 'dips', `Step 1: Grasp the parallel bars and hop up so your arms are straight. Lean forward at about a 45-degree angle, bend at the waist, so your legs are vertical, and pull your toes up toward your shins. Pull your shoulders down and back. Maintain this body position throughout the exercise.

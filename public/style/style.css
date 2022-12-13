@@ -672,7 +672,7 @@ h2 {
     padding: 0;
     margin: 2px 0 0 0;
     box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
-    background-color: #0b0000;
+    /* background-color: #0b0000; */
     list-style-type: none;
 }
 
@@ -694,8 +694,10 @@ h2 {
 
 /* ------------- fix it later ------------- */
 .dd-menu li:hover {
-    background-color: #f6f6f6;
+    /* background-color: #f6f6f6; */
 }
+
+
 
 .dd-menu li a {
     display: block;
