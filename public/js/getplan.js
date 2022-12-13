@@ -12,24 +12,24 @@ openModalButtons.forEach(button => {
   })
 })
 
-planNameForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    getPlanNameValue();
-})
+// planNameForm.addEventListener('submit', (e) => {
+//   e.preventDefault();
+//   getPlanNameValue();
+// })
 
 overlay.addEventListener('click', () => {
-    const modals = document.querySelectorAll('.modal.active')
-    modals.forEach(modal => {
-        closeModal(modal)
-    })
-    })
+  const modals = document.querySelectorAll('.modal.active')
+  modals.forEach(modal => {
+    closeModal(modal)
+  })
+})
 
 closeModalButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const modal = button.closest('.modal') 
-      closeModal(modal)
-    })
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal)
   })
+})
 
 function openModal(modal) {
   if (modal == null) return
@@ -38,20 +38,17 @@ function openModal(modal) {
 }
 
 function closeModal(modal) {
-    if (modal == null) return
-    modal.classList.remove('active')
-    overlay.classList.remove('active')
-  }
+  if (modal == null) return
+  modal.classList.remove('active')
+  overlay.classList.remove('active')
+}
 
-  function getPlanNameValue(){
-    
-    const planName = planNameForm.querySelector('input[name=planNameValue]')?.value;
-    localStorage.setItem('planName', planName);
-    window.location.href = '/plans-chooseDay';
+// function getPlanNameValue() {
 
-    console.log(planName);
-   
-    
-  }
+//   const planName = planNameForm.querySelector('input[name=planNameValue]')?.value;
+//   localStorage.setItem('planName', planName);
+//   window.location.href = '/plans-chooseDay';
+//   console.log(planName);
+// }
 
 

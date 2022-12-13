@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,77 +10,87 @@
     <script defer src="/js/popUp.js"></script>
 
 
-
-
     <title>Add Exercise</title>
 </head>
+
 <body class="chooseDayBody">
 
-    <nav class="chooseDayHeader">
-        <h2 class="websiteName">Biceps</h2>
-        <button class="logInButton"><a href="/logIn">Log In</a></button>
-        <button class="signUpButton"><a href="/signUp">Sign Up</a></button>
-    </nav>
-
-    
+    <% if (typeof user != 'undefined') { %>
+        <%- include("./partials/userNav.ejs") %> 
+      <% } else {%>
+        <%- include("./partials/guestNav.ejs") %> 
+      <% } %> 
 
 
+    <div class="main-cards-container">
 
-    <div class="gridContanior">
-
-        <div class="grid"> 
-
-            <div class="planNameDiv">
-                <p class="chooseDayPlanName"><%= day %> </p>
-            </div>
-            <div data-modal-target = '#modal' class="dayCard">
+        <!-- {{workout.title}} -->
+        <h1 class="plans-title"><%= day %></h1>
+        <div class="cards-container">
+            
+            <div data-modal-target='#modal' class="dayCard">
                 <p class="dayText">Add</p>
-
             </div>
 
+            <% execrices.forEach( execrice => { %> 
+            <div class="card">
+                <!-- views/workout-discription/{{workout.id}}/{{workout.discription}} -->
+                <a href="/body-parts/<%= execrice.muscle %>/<%= execrice.name%>" target="_self">
+                    <!-- img/{{workout.name}}-workouts/{{workout.img}} -->
+                    <img class="card-img" src="/img/<%= execrice.muscle %>-workouts/<%= execrice.img %>"
+                        alt="<%= execrice.name %>">
+                </a>
+                <div class="card-title">
+                    <!-- {{workout.name}} -->
+                    <p>
+                        <%= execrice.name %>
+                    </p>
+                </div>
+            </div>
+            <% }) %> 
         </div>
     </div>
 
-    
 
     <!-- popup to add exercise-->
     <div class="modal" id="modal">
-        <div class = 'modal-header'>
-            <div class = 'title'>Add Exercises</div>
-            <button data-close-button=" close-button"  class = 'close-button'>&times;</button>
+        <div class='modal-header'>
+            <div class='title'>Add Exercises</div>
+            <button data-close-button=" close-button" class='close-button'>&times;</button>
         </div>
         <div class="modal-body">
 
-            <form action="#">
                 <label for="Exercises">Choose Excercises</label>
                 <select name="Exercises" id="Exercises" size="10" multiple>
-                <optgroup label="Chest">
 
-                  <option value="chest1">Chest1</option>
-                  <option value="chest2">Chest2</option>
-                  <option value="chest3">Chest3</option>
-                  <option value="chest4">Chest4</option>
-                  <option value="chest5">Chest5</option>
 
-                  <optgroup label="Biceps">
+                    <!-- loop through each muscle -->
+                    <% allExecrices.forEach(muscleExercises => { %> 
+                        <optgroup label=<%= muscleExercises[0].muscle %>>
 
-                  <option value="biceps1">biceps1</option>
-                  <option value="biceps2">biceps2</option>
-                  <option value="biceps3">biceps3</option>
+                            <!-- loop through each exercise in a specific muscle -->
+                            <% muscleExercises.forEach(exercise => { %> 
+                                <option value=<%= exercise.exercise_id %>><%= exercise.name %></option>
+                            <% }) %>        
+                    <% }) %> 
+
                 </select>
-                
-                <button id="submit">Add Exercises</button>
+
+
+                <form action="/plans/<%=name%>/<%=plan_id%>/<%=day%>">
+                    <button id="submit" class="/plans/<%=name%>/<%=plan_id%>/<%=day%>">Add Exercises</button>
+                </form>
 
                 <!-- <input type="submit" value="Submit" onclick="getOption()" /> -->
 
-            </form>
-         
+
 
         </div>
     </div>
 
-<div  id="overlay"></div>
+    <div id="overlay"></div>
 
-    
+
 </body>
+
 </html>

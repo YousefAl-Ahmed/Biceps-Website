@@ -16,26 +16,11 @@
 <body class="plansBody">
 
 
-    <nav>
-        <h2 class="websiteName">Biceps</h2>
-        <li><a href="">Home</a></li>
-        <li><a href="">My plans</a></li>
-        <li><a href="">Workouts</a></li>
-    
-        <label class="dropdown">
-    
-            <div class="dd-button"> My Account</div>
-    
-            <input type="checkbox" class="dd-input" id="test">
-    
-            <ul class="dd-menu">
-                <li><a href="">My Profile</a></li>
-                <li><a href="">Log out</a></li>
-            </ul>
-    
-        </label>
-    
-    </nav>
+    <% if (typeof user != 'undefined') { %>
+        <%- include("./partials/userNav.ejs") %> 
+      <% } else {%>
+        <%- include("./partials/guestNav.ejs") %> 
+      <% } %> 
 
 
 
@@ -48,66 +33,26 @@
             </div>
 
             <!-- for each plan there is a div (query the plans from the database) -->
-            <div class="plan">
-                <!-- image of the plan if exist -->
-                <img src="/img/bulking.png" class="planImg" alt="">
+            <% plans.forEach( plan => { %> 
 
-                <!-- name of the plan -->
-                <p class="planName">Bulking</p>
+                <a href="/plans/<%= plan.name%>/<%= plan.plan_id%>">
+                    <div class="plan">
+                        <p class="planName"><%= plan.name %></p>
+                    </div>
+                </a>
+            <% })%> 
 
-                <!-- button -->
-                <button class="start">START</button>
-            </div>
-            <div class="plan">
-                <!-- image of the plan if exist -->
-                <img src="/img/bulking.png" class="planImg" alt="">
 
-                <!-- name of the plan -->
-                <p class="planName">Bulking</p>
+            <a href="/plans-chooseDay">
+                <div class="plan">
+    
+                    <img src="/img/bulking.png" class="planImg" alt="">
+    
+                    <p class="planName">Bulking</p>
+    
+                </div>
+            </a>
 
-                <!-- button -->
-                <button class="start">START</button>
-            </div>
-            <div class="plan">
-                <!-- image of the plan if exist -->
-                <img src="/img/bulking.png" class="planImg" alt="">
-
-                <!-- name of the plan -->
-                <p class="planName">Bulking</p>
-
-                <!-- button -->
-                <button class="start">START</button>
-            </div>
-            <div class="plan">
-                <!-- image of the plan if exist -->
-                <img src="/img/bulking.png" class="planImg" alt="">
-
-                <!-- name of the plan -->
-                <p class="planName">Bulking</p>
-
-                <!-- button -->
-                <button class="start">START</button>
-            </div>
-            <div class="plan">
-                <!-- image of the plan if exist -->
-                <img src="/img/bulking.png" class="planImg" alt="">
-
-                <!-- name of the plan -->
-                <p class="planName">Bulking</p>
-
-                <!-- button -->
-                <button class="start">START</button>
-            </div>
-            <div class="plan">
-                <!-- image of the plan if exist -->
-                <img src="/img/bulking.png" class="planImg" alt="">
-
-                <!-- name of the plan -->
-                <p class="planName">Bulking</p>
-
-                <!-- button -->
-                <button class="start">START</button>
-            </div>
         </div>
 
     </div>
@@ -121,14 +66,13 @@
             <div class = 'title'>Choose a name for your plan</div>
             <button data-close-button=" close-button"  class = 'close-button'>&times;</button>
         </div>
+
         <div class="modal-body">
 
-            <form action="/plans-chooseDay" method="POST">
-                 <input name="planNameValue"   placeholder="Example: Yousef Plan :D" type="text" id="planInput">
-                 <button  onclick="getPlanNameValue()" id="submit">save</button> </a>
-
-
-
+            <form action="/plans-chooseDay" method="post">
+                 <input name="planNameValue"  placeholder="Example: Yousef Plan :D" type="text" id="planInput">
+                 <button id="submit">save</button>
+            </form>
         </div>
     </div>
     <div  id="overlay"></div>

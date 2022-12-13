@@ -18,43 +18,34 @@
 <body class="chooseDayBody">
 
 
-    <nav class="chooseDayHeader">
-        <h2 class="websiteName">Biceps</h2>
-        <button class="logInButton"><a href="/logIn">Log In</a></button>
-        <button class="signUpButton"><a href="/signUp">Sign Up</a></button>
-    </nav>
-
-
-
-
-
-
-
+    <% if (typeof user != 'undefined') { %>
+        <%- include("./partials/userNav.ejs") %> 
+      <% } else {%>
+        <%- include("./partials/guestNav.ejs") %> 
+      <% } %> 
 
     <div class="main-cards-container">
-<script> const newplanName=localStorage.getItem('planName')
-console.log(newplanName)
-</script>
+
         <!-- <div class="grid"> -->
         <div>
             <div class="planNameDiv">
                 <p class="chooseDayPlanName">
+                    <%= name %>
                 </p>
 
                 <!-- <i class="fa-solid fa-pencil" style="color: white; font-size: 36px;"></i> -->
             </div>
-            
+
 
             <div class="cards-container">
-                <a  style="text-decoration:none" href="/addExcercise/Sunday" >
+                <a style="text-decoration:none" href="/plans/<%=name%>/<%= plan_id %>/sunday">
                     <div class="card2 sunday-card">
                         <!-- Day name -->
                         <p class="dayText">Sunday</p>
-
-
                     </div>
                 </a>
-                <a  style="text-decoration:none" href="/addExcercise/Monday">
+
+                <a style="text-decoration:none" href="/plans/<%=name%>/<%= plan_id %>/monday">
 
                     <div class="card2">
 
@@ -63,7 +54,7 @@ console.log(newplanName)
 
                     </div>
                 </a>
-                <a style="text-decoration:none" href="/addExcercise/Tuesday">
+                <a style="text-decoration:none" href="/plans/<%=name%>/<%= plan_id %>/tuesday">
 
                     <div class="card2">
 
@@ -73,7 +64,7 @@ console.log(newplanName)
 
                     </div>
                 </a>
-                <a style="text-decoration:none" href="/addExcercise/Wednesday">
+                <a style="text-decoration:none" href="/plans/<%=name%>/<%= plan_id %>/wednesday">
 
                     <div class="card2">
 
@@ -83,7 +74,7 @@ console.log(newplanName)
 
                     </div>
                 </a>
-                <a style="text-decoration:none" href="/addExcercise/Thursday">
+                <a style="text-decoration:none" href="/plans/<%=name%>/<%= plan_id %>/thursday">
 
                     <div class="card2">
 
@@ -93,7 +84,7 @@ console.log(newplanName)
 
                     </div>
                 </a>
-                <a style="text-decoration:none" href="/addExcercise/Friday">
+                <a style="text-decoration:none" href="/plans/<%=name%>/<%= plan_id %>/friday">
 
                     <div class="card2">
 
@@ -103,7 +94,8 @@ console.log(newplanName)
 
                     </div>
                 </a>
-                <a class="saturday-card" onclick="myFunction()" style="text-decoration:none" href="/addExcercise/Saturday">
+                <a class="saturday-card" onclick="myFunction()" style="text-decoration:none"
+                    href="/addExcercise/Saturday">
                     <div class="card2">
 
                         <!-- Day name -->
