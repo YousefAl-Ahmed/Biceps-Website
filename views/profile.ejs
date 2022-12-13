@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/style/style.css">
-    <title>Document</title>
+    <title>Profile</title>
 </head>
 <body class="profileBody">
 
@@ -19,31 +19,36 @@
 
     <div class="GeneralProfileContainer Container">
         <h1 class="profileInfo">General Info</h1>
-
+        
         <div class="GeneralProfile">
             <div class="GeneralProfile">
                 <label class="GeneralProfileText" for="name">Name</label>
-                <input type="text" name="name" placeholder= <%= userInfo.username%>>
+                <input type="text" name="name" id="username" placeholder= <%= userInfo.username%>>
             </div>
     
             <div class="GeneralProfile">
                 <label class="GeneralProfileText" for="weight">weight (kg)</label>
-                <input type="number" name="weight" placeholder= <%= userInfo.weight%>>
+                <input type="number" name="weight" id="weight" placeholder= <%= userInfo.weight%>>
             </div>
     
             <div class="GeneralProfile">
                 <label class="GeneralProfileText" for="target weight">target weight (kg)</label>
-                <input type="number" name="target weight" placeholder= <%= userInfo.target_weight%>>
+                <input type="number" name="target weight" id="target_weight" placeholder= <%= userInfo.target_weight%>>
             </div>
     
             <div class="GeneralProfile">
                 <label class="GeneralProfileText" for="height" >height</label>
-                <input type="number" name="height" placeholder=<%= userInfo.height%>>
+                <input type="number" name="height" id="height" placeholder=<%= userInfo.height%>>
+            </div>
+
+            <div class="GeneralProfile">
+                <label class="GeneralProfileText" for="age" >age</label>
+                <input type="number" name="age" id="age" placeholder=<%= age%> disabled>
             </div>
 
             <div class="GeneralProfile">
                 <label class="GeneralProfileText" for="level">Fitness Level</label>
-                <select name="level" class="level">
+                <select name="level" class="level" id="level">
                     <option value=""><%= userInfo.level%></option>
                     <option value="beginner">Beginner</option>
                     <option value="intermediate">Intermediate</option>
@@ -54,7 +59,7 @@
         </div>
 
         <div>
-            <button class="updateButton">Update Info</button>
+            <button class="updateButton" id=<%=user.id.user_id%>>Update Info</button>
         </div>
     </div>
 
@@ -66,21 +71,23 @@
         <div class="GeneralProfile nutrition">
             <div class="GeneralProfile">
                 <label class="NutritionText" for="BMI">BMI</label>
-                <input type="number" name="BMI" placeholder="" disabled>
+                <input type="number" name="BMI" id="bmi" placeholder=<%=nutritions.BMI%> disabled>
             </div>
     
             <div class="GeneralProfile nutrition">
                 <label class="NutritionText" for="Calories">Calories/Day</label>
-                <input type="number" name="Calories" placeholder="" disabled>
+                <input type="number" name="Calories" id="calories" placeholder=<%=nutritions.calories%> disabled>
             </div>
     
             <div class="GeneralProfile nutrition">
                 <label class="NutritionText" for="Protien">Protien/Day</label>
-                <input type="number" name="Protien" placeholder="" disabled>
+                <input type="number" name="Protien" id="protien" placeholder=<%=nutritions.protien%> disabled>
             </div>
     
         </div>
     </div>
+    
+    <script src="/js/profile.js"></script>
     
 </body>
 </html>
