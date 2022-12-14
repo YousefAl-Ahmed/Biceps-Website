@@ -9,6 +9,7 @@ const auth = require('./models/auth');
 const plans = require('./models/plans');
 const { render } = require("ejs");
 const { resolveSoa } = require("dns");
+const { rawListeners } = require("process");
 
 //express app
 const app = express();
@@ -179,11 +180,16 @@ app.post("/plans/:name/:id/:day", async (req, res) => {
 
     await selectedArray.forEach(async exercise_id => {
         await plans.addExerciseToPlan(user_id, info.id, info.day, exercise_id);
-
     });
+    res.json(1)
 
-    const execrices = await plans.getPlanExercises(info.id, info.day)
-    // console.log(execrices)
+})
+
+
+app.get("/plans/:name/:id/:day/exercises", async (req, res) => {
+    const user_id = req.session.user.id.user_id;
+    const info = req.params;
+
 
     const chestExecrices = await plans.showExercises("chest");
     const backExecrices = await plans.showExercises("back");
@@ -196,8 +202,8 @@ app.post("/plans/:name/:id/:day", async (req, res) => {
 
     const allExecrices = [chestExecrices, backExecrices, bicepsExecrices, tricepsExecrices, forearmsExecrices, shoulderExecrices, absExecrices, legsExecrices];
 
+    res.json(allExecrices);
 
-    res.redirect(req.get('referer'));
 })
 
 
