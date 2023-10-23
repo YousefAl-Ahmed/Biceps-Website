@@ -7,7 +7,7 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.17.3",
     "nodemon": "^2.0.20",
-    "nunjucks": "^3.2.3",
+    "nunjucks": "^3.2.4",
     "sqlite": "^4.1.2",
     "sqlite3": "^5.1.2"
   }
